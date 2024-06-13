@@ -1,0 +1,22 @@
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: cyan;
+  align-items: center;
+  width: 100vw;
+}
+header .empresa_info {
+  align-items: center;
+  display: inline-flex;
+}
+header ul {
+  display: inline-flex;
+  gap: 40px;
+}
+header ul li {
+  list-style: none;
+}
+header ul li button {
+  color: black;
+  background-color: blue;
+}/*# sourceMappingURL=header.css.map */

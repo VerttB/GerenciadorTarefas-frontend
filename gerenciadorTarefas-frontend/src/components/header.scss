@@ -1,0 +1,25 @@
+header{
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: cyan;
+    align-items: center;
+    width: 100vw;
+
+    .empresa_info{
+        align-items: center;
+        display: inline-flex;
+    }
+
+    ul{
+        display: inline-flex;
+        gap: 40px;
+        li{
+            list-style: none;
+            button{
+                color: black;
+                background-color: blue;
+            }
+        }
+    }
+    
+}
