@@ -1,5 +1,5 @@
 
-import './header.css'
+import '../assets/styles/header.css';
 
 function Header(){
 
@@ -7,15 +7,15 @@ function Header(){
         <>
         <header>
             <div className="header_empresa_info">
-                <i>Logo</i>
-                <p>Nome Empresa</p>
+                <p>🧻</p>
+                <p>LetCorporation</p>
                 </div>
 
             <div className='header_extras'>
                 <ul>
-                    <li><button>Sign Up</button></li>
-                    <li><button>Sing Out</button></li>
-                    <li><a href="">Sobre</a></li>
+                    <li><a href='#'>Sign Up</a></li>
+                    <li><a href='#'>Sing Out</a></li>
+                    <li><a href="#">Sobre</a></li>
                 </ul>
                 <input type="checkbox" id="slideTema" />
                 <label htmlFor="slideTema" id="temaLabel"></label>

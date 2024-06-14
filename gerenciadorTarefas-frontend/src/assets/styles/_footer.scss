@@ -1,0 +1,10 @@
+@import '../abstract/variaveis';
+footer{
+    display: inline-flex;
+    background-color: $cor-primaria-barra;
+    width: 100vw;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

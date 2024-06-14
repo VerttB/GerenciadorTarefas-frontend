@@ -1,5 +1,6 @@
 @import '../abstract/root';
 @import '../abstract/variaveis';
+@import '../styles/footer';
 
 header{
     display: inline-flex;
@@ -7,44 +8,56 @@ header{
     background-color: $cor-primaria-barra;
     align-items: center;
     width: 100vw;
+    height: 40px;
 
     .header_empresa_info{
         align-items: center;
         display: inline-flex;
         text-align: left;
-        margin: auto 15px;
+        gap: 12px;
+        margin: 0 15px;
         
     }
 
     .header_extras{
         display: inline-flex;
-        gap: 16px;
+        justify-content: space-evenly;
+        gap: 24px;
         align-items: center;
-        margin-right: 100px;
+        margin-right: 60px;
     ul{
         display: inline-flex;
-        gap: 15px;
+        text-align: center;
+        justify-content: space-around;
+    
         li{
             list-style: none;
             align-items: center;
-            button{
+            width: 80px;
+            text-align: center;
+            a{
                 color: black;
                 background-color: $cor-botoes;
-                border-radius: 16px;
-                padding: 0.25rem;
-                border: none;
+                border-radius: 4px;
+                padding: 2px;
                 height: 30px;
-                width: 80px;
-                cursor: pointer;
+                text-decoration: none;
+                font-size: 14px;
 
 
                 &:hover{
                     background-color: bisque;
+                    color: grey;
                 }
 
                 &:active{
                     background-color: azure;
                 }
+
+               
+            }
+            &:last-child > a{
+                background-color:transparent;
             }
         }
 
@@ -56,8 +69,8 @@ header{
     }
 
     #temaLabel{
-        width: 60px;
-        height: 28px;
+        width: 50px;
+        height: 20px;
         border-radius: 16px;
         background-color:azure;
         cursor: pointer;
@@ -68,8 +81,8 @@ header{
         &::before{
             position: absolute;
             content: '';
-            width: 22px;
-            height: 24px;
+            width: 16px;
+            height: 16px;
             border-radius: 36px;
             margin: 2px;
             background-color: black;
@@ -82,7 +95,7 @@ header{
     }
 
     #slideTema:checked + #temaLabel::before{
-        transform: translateX(34px);
+        transform: translateX(30px);
     }
     }
     
