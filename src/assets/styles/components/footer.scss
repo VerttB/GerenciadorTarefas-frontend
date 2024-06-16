@@ -1,0 +1,20 @@
+@import '../variaveis.scss';
+@import '../mixnins.scss';
+
+footer{
+    display: inline-flex;
+    background-color: $cor-primaria-barra;
+    width: 100vw;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+
+    p {
+        @include ff-fs-fw(Arial, 18px, 500);
+       &:first-child{
+        margin-left: 10px;
+       }
+    }
+}

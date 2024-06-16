@@ -1,0 +1,13 @@
+@mixin ff-fs-fw($ff: Arial, $fs: 12px, $fw:600){
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin bg-bd-mg-pd-bdR($bg: transparent, $bd:solid 1px black, $mg:0,$pd:0,$bdR:0px){
+    background-color: $bg;
+    border: $bd;
+    margin: $mg;
+    padding: $pd;
+    border-radius: $bdR;
+}
