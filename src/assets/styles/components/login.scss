@@ -1,0 +1,30 @@
+@import '../variaveis.scss';
+@import '../mixnins.scss';
+
+
+.loginForm{
+    @include bg-bd-mg-pd-bdR(rgba(129, 122, 105, 0.575),transparent, auto, auto, 10px);
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .loginIcons{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        .googleIcon, .facebookIcon, .linkedinIcon{
+            @include bg-bd-mg-pd-bdR(white,transparent, auto,4px, 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.603);
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}

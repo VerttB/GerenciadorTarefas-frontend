@@ -12,9 +12,9 @@ footer{
     align-items: center;
 
     p {
-        @include ff-fs-fw(Arial, 18px, 500);
+        @include ff-fs-fw(Arial, 16px, 500);
        &:first-child{
-        margin-left: 10px;
+        margin: auto 10px
        }
     }
 }
