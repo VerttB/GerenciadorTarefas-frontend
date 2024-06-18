@@ -14,9 +14,9 @@ function Header(){
 
             <div className='header_extras'>
                 <ul>
-                    <li><a href='#'>Sign Up</a></li>
-                    <li><a href='#'>Sing Out</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <li><a id='signUp' href='#'>Sign Up</a></li>
+                    <li><a id='signIn' href='#'>Sign In</a></li>
+                    <li><a id='sobre' href="#">Sobre</a></li>
                 </ul>
                 <input type="checkbox" id="slideTema" />
                 <label htmlFor="slideTema" id="temaLabel"></label>

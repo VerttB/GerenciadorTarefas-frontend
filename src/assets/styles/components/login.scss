@@ -2,27 +2,41 @@
 @import '../mixnins.scss';
 
 
-.loginForm{
-    @include bg-bd-mg-pd-bdR(rgba(129, 122, 105, 0.575),transparent, auto, auto, 10px);
-    height: 400px;
+.formAreaBlock{
+    @include bg-bd-mg-pd-bdR($cor-secundaria,transparent,0, auto, 10px);
+    height: 600px;
     width: 400px;
     @include flex-column-center(24px);
     align-items: center;
 
-    .loginIcons{
-        display: flex;
-        gap: 10px;
+    .formIcons{
+        @include flex-center(12px);
        
         .googleIcon, .facebookIcon, .linkedinIcon{
-            @include bg-bd-mg-pd-bdR(white,transparent, auto,4px, 100%);
-            display: flex;
+            @include bg-bd-mg-pd-bdR(rgb(247, 242, 242),transparent, auto,4px, 100%);
+            @include flex-center;
             align-items: center;
-            justify-content: center;
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.603);
-            font-size: 20px;
+            font-size: 24px;
             cursor: pointer;
+
+            &:hover{
+                background-color: lighten(white, 50);
+            }
         }
     }
+
+    .formItem{
+        @include flex-center
+        
+    }
+
+    Input{
+        width: 200px;
+    }
+
+    
 }
+

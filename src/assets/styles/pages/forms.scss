@@ -1,0 +1,31 @@
+@import '../variaveis.scss';
+@import '../mixnins.scss';
+
+
+
+
+.formGeral{
+    @include flex-center(4px);
+    align-items: center;
+    height: 90vh;
+
+    #formLabel{
+        left: 26%;
+        height: 400px;
+        width: 420px;
+        background-color: blue;
+        z-index: 1;
+        position: absolute;
+        transition: 0.5s ease-in;
+    }
+
+    #slideForm{
+        display: none;
+    }
+    #slideForm:checked + #formLabel{
+        transform: translateX(400px);
+    }
+
+}
+
+

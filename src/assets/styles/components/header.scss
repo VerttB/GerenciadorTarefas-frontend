@@ -35,28 +35,32 @@ header{
             align-items: center;
             width: 80px;
             text-align: center;
+
             a{
                 color: black;
                 height: 30px;
                 text-decoration: none;
                 @include ff-fs-fw(Arial, 14px, 600);
-                @include bg-bd-mg-pd-bdR($cor-secundaria,none,auto,4px,8px);
-                &:hover{
-                    background-color: bisque;
-                    color: grey;
-                }
-
-                &:active{
-                    background-color: azure;
-                }
-
-               
             }
-            &:last-child > a{
-                background-color:transparent;
+
+            #signIn{
+                @include bg-bd-mg-pd-bdR(none,1px solid rgb(14, 204, 115),auto,4px 6px,8px);
+                &:hover{
+                    background-color: lighten($cor-primaria, 20);
+                }
+            }
+            #signUp{
+                @include bg-bd-mg-pd-bdR($cor-secundaria,none,auto,4px 6px,8px);
+                &:hover{
+                    background-color: lighten($cor-secundaria, 20);
+                }
+            }
+            #sobre{
+                &:hover{
+                    color: lighten(black, 40);
+                }
             }
         }
-
         
     }
 

@@ -13,9 +13,10 @@
 }
 
 
-@mixin flex-center(){
+@mixin flex-center($gap:0px){
     display: flex;
     justify-content: center;
+    gap: $gap;
 }
 
 
