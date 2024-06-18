@@ -9,10 +9,11 @@ import './assets/styles/reset.scss'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <>
-    {/* <Header/> */}
-    {/* <Login></Login> */}
-    <Cadastro></Cadastro>
-    {/* <Footer></Footer> */}
+    
+      <Header/>
+      {/* <Login></Login> */}
+      <Cadastro></Cadastro>
+      {/* <Footer></Footer> */}
     </>
   </React.StrictMode>,
 )

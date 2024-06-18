@@ -11,3 +11,17 @@
     padding: $pd;
     border-radius: $bdR;
 }
+
+
+@mixin flex-center(){
+    display: flex;
+    justify-content: center;
+}
+
+
+@mixin flex-column-center($gap: 0px){
+    @include flex-center;
+    flex-direction: column;
+    gap: $gap;
+
+}

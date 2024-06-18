@@ -5,7 +5,7 @@
 header{
     display: inline-flex;
     justify-content: space-between;
-    background-color: $cor-primaria-barra;
+    background-color: $cor-primaria;
     align-items: center;
     width: 100vw;
     height: 40px;
@@ -37,14 +37,10 @@ header{
             text-align: center;
             a{
                 color: black;
-                background-color: $cor-botoes;
-                border-radius: 4px;
-                padding: 2px;
                 height: 30px;
                 text-decoration: none;
-                font-size: 14px;
                 @include ff-fs-fw(Arial, 14px, 600);
-                @include bg-bd-mg-pd-bdR($cor-botoes,none,auto,4px,8px);
+                @include bg-bd-mg-pd-bdR($cor-secundaria,none,auto,4px,8px);
                 &:hover{
                     background-color: bisque;
                     color: grey;
@@ -83,15 +79,13 @@ header{
             content: '';
             width: 16px;
             height: 16px;
-            border-radius: 36px;
-            margin: 2px;
-            background-color: black;
             transition: 0.5s;
+            @include bg-bd-mg-pd-bdR(black,transparent,2px,0px,100%)
         }
     }
 
     #slideTema:checked + #temaLabel{
-        background-color: $cor-mudar-tema
+        background-color: $cor-terciaria;
     }
 
     #slideTema:checked + #temaLabel::before{
