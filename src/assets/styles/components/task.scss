@@ -1,0 +1,24 @@
+@import '../variaveis.scss';
+@import '../mixnins.scss';
+
+.taskItems{
+    display: grid;
+    grid-template-columns: repeat(4,400px);
+    gap: 10px;
+    border: 1px solid black;
+    width: fit-content;
+
+    .cardItem{
+        cursor: pointer;
+        width: 400px;
+        transition: 0.5 ease-in-out;
+        
+        .ant-card-head{
+            background-color: rgb(219, 209, 209);
+        }
+
+        &:hover{
+            transform:scale(1.01)
+        }
+    }
+}

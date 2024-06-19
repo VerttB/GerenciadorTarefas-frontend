@@ -21,10 +21,20 @@ const task =[{
 },
 {
   nome: "Kaik",
-  descricao:"Caminhar bastante",
+  descricao:"Parar de Bagunçar",
   status:"Pendente",
   data: "12/30/2004"
-}
+},
+{nome: "Leticia",
+descricao:"Estudar Node.Js",
+status:"Pendente",
+data: "12/30/2004"
+},
+{nome: "Cainan",
+  descricao:"Fazer Grafos",
+  status:"Em Andamento",
+  data: "12/30/2004"
+  }
 ]
 
 ReactDOM.createRoot(document.getElementById('root')).render(
