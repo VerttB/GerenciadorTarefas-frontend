@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* <Login></Login> */}
       {/* <Cadastro></Cadastro> */}
       <CadastroLogin></CadastroLogin>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   </React.StrictMode>,
 )

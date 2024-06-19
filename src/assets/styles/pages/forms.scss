@@ -5,25 +5,25 @@
 
 
 .formGeral{
-    @include flex-center(4px);
+    @include flex-center(12px);
     align-items: center;
     height: 90vh;
 
     #formLabel{
         left: 26%;
-        height: 400px;
-        width: 420px;
-        background-color: blue;
+        height: 600px;
+        width: 440px;
+        background-color: $cor-terciaria;
         z-index: 1;
         position: absolute;
-        transition: 0.5s ease-in;
+        transition: 1s ease-in-out;
     }
 
     #slideForm{
         display: none;
     }
     #slideForm:checked + #formLabel{
-        transform: translateX(400px);
+        transform: translateX(435px);
     }
 
 }

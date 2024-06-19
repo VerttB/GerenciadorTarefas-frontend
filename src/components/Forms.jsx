@@ -1,9 +1,8 @@
-import Login from './Login.jsx'
-import Cadastro from './Cadastro.jsx'
-import '../assets/styles/pages/forms.scss'
+import Login from './Login.jsx';
+import Cadastro from './Cadastro.jsx';
+import '../assets/styles/pages/forms.scss';
 
 function CadastroLogin(){
-
     return(
         <>
         <div className='formGeral'>
