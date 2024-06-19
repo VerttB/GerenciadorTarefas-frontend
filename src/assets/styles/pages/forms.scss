@@ -10,9 +10,9 @@
     height: 90vh;
 
     #formLabel{
-        left: 26%;
+        left: 28%;
         height: 600px;
-        width: 440px;
+        width: 435px;
         background-color: $cor-terciaria;
         z-index: 1;
         position: absolute;
@@ -23,7 +23,7 @@
         display: none;
     }
     #slideForm:checked + #formLabel{
-        transform: translateX(435px);
+        transform: translateX(416px);
     }
 
 }
