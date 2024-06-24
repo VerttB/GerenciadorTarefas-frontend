@@ -28,7 +28,7 @@ TaskCard.propTypes = {
 }
 
 TaskCard.defaultProps = {
-    nome:"",
+    nome:" ",
     descricao:"",
     status:"",
     data:""

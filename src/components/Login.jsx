@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useContext ,useEffect} from 'react';
+import { DisableForm } from "./Forms.jsx";
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
 import { Input, Alert, Button, Form} from 'antd';
 import '../assets/styles/components/login.scss'
+
 
 const SubmitButton = ({ form, children }) => {
   const [submittable, setSubmittable] = React.useState(false);
@@ -26,6 +28,13 @@ const SubmitButton = ({ form, children }) => {
 
 function Login(){
   const [form] = Form.useForm();
+  const disable = useContext(DisableForm);
+
+
+  console.log(typeof(disable));
+
+
+
   return(
     <div className="formAreaBlock">
       <h2>Sign Up</h2>
@@ -36,7 +45,7 @@ function Login(){
       </div>
 
 
-      <Form className='formLogin' form={form} name='formLogin' layout='vertical' autoComplete='off'>
+      <Form disabled={!disable} className='formLogin' form={form} name='formLogin' layout='vertical' autoComplete='off'>
 
         <Form.Item name="Email" validateTrigger="onBlur"
         rules={[{required: true}]} >

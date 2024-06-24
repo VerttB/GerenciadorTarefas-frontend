@@ -34,7 +34,12 @@ data: "12/30/2004"
   descricao:"Fazer Grafos",
   status:"Em Andamento",
   data: "12/30/2004"
-  }
+  },
+{nome: "Cainan",
+    descricao:"Fazer Grafos",
+    status:"Em Andamento",
+    data: "12/30/2004"
+    }
 ]
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -45,11 +50,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <>
     
       <Header/>
-      <TaskCard tasks={task}></TaskCard>
+      <CadastroLogin></CadastroLogin>
+      {/* <TaskCard tasks={task}></TaskCard> */}
       <Footer></Footer>
       {/* <Login></Login> */}
       {/* <Cadastro></Cadastro> */}
-      {/* <CadastroLogin></CadastroLogin> */}
     </>
   </React.StrictMode>,
 )

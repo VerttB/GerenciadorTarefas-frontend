@@ -1,11 +1,12 @@
 
 @import '../variaveis.scss';
 @import '../mixnins.scss';
-
 header{
     display: inline-flex;
     justify-content: space-between;
     background-color: $cor-primaria;
+    color: $cor-texto;
+    font-family: fantasy;
     align-items: center;
     width: 100vw;
     height: 40px;
@@ -16,7 +17,7 @@ header{
         text-align: left;
         gap: 12px;
         margin: 0 15px;
-        @include ff-fs-fw(Arial, 16px, 600);
+        @include ff-fs-fw(fantasy, 16px, 600);
     }
 
     .header_extras{
@@ -37,14 +38,14 @@ header{
             text-align: center;
 
             a{
-                color: black;
+                color: $cor-texto;
                 height: 30px;
                 text-decoration: none;
                 @include ff-fs-fw(Arial, 14px, 600);
             }
 
             #signIn{
-                @include bg-bd-mg-pd-bdR(none,1px solid rgb(14, 204, 115),auto,4px 6px,8px);
+                @include bg-bd-mg-pd-bdR(none,1px solid $cor-secundaria,auto,4px 6px,8px);
                 &:hover{
                     background-color: lighten($cor-primaria, 20);
                 }
@@ -52,12 +53,14 @@ header{
             #signUp{
                 @include bg-bd-mg-pd-bdR($cor-secundaria,none,auto,4px 6px,8px);
                 &:hover{
-                    background-color: lighten($cor-secundaria, 20);
+                    background-color: darken($cor-secundaria, 40);
                 }
             }
             #sobre{
                 &:hover{
-                    color: lighten(black, 40);
+                    $cor: darken($cor-terciaria, 10);
+                    color: desaturate($cor, $amount: 80);
+                  
                 }
             }
         }

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
 import { Input, Space, Button, Form } from 'antd';
 import '../assets/styles/components/login.scss'
+import { DisableForm } from "./Forms.jsx";
 
 function App(){
+
+  const disable = useContext(DisableForm);
+  console.log("cadastro:" ,disable);
+
   return(
     <div className="formAreaBlock cadastro" disabled="true">
       <h2>Sign Up</h2>
@@ -14,7 +19,7 @@ function App(){
       </div>
     
 
-    <Form name='formCadastro' disabled="true">
+    <Form name='formCadastro' disabled={disable}>
 
       <Form.Item name="Nome" validateTrigger="onBlur" 
       rules={[{

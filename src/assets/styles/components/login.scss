@@ -4,7 +4,7 @@
 
 .formAreaBlock{
     @include bg-bd-mg-pd-bdR($cor-secundaria,transparent,0, auto, 10px);
-    height: 600px;
+    height:600px;
     width: 400px;
     @include flex-column-center(24px);
     align-items: center;
