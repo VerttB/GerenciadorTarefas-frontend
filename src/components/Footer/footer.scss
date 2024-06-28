@@ -1,9 +1,9 @@
-@import '../variaveis.scss';
-@import '../mixnins.scss';
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
 
 footer{
     display: inline-flex;
-    background-color: $cor-primaria;
+    background-color: variaveis.$cor-primaria;
     width: 100vw;
     height: 40px;
     position: absolute;
@@ -12,7 +12,7 @@ footer{
     align-items: center;
 
     p {
-        @include ff-fs-fw(Arial, 16px, 500);
+        @include mixnins.ff-fs-fw(Arial, 16px, 500);
        &:first-child{
         margin: auto 10px
        }

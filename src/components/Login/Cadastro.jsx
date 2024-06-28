@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
 import { Input, Space, Button, Form } from 'antd';
-import '../assets/styles/components/login.scss'
-import { DisableForm } from "./Forms.jsx";
+import './login.scss'
+import { DisableForm } from "../Forms/Forms";
 
 function App(){
 

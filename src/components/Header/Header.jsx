@@ -1,5 +1,5 @@
 
-import '../assets/styles/components/header.scss'
+import './header.scss'
 
 
 function Header(){

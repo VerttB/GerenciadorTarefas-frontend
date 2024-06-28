@@ -1,5 +1,6 @@
-@import '../variaveis.scss';
-@import '../mixnins.scss';
+
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
 
 .taskItems{
     display: grid;

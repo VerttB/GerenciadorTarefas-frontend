@@ -1,7 +1,7 @@
 
 import {Card} from 'antd';
 import PropTypes from "prop-types";
-import "../assets/styles/components/task.scss";
+import "./task.scss";
 function TaskCard({tasks}){
 
     const taskList = tasks.map(task =>(

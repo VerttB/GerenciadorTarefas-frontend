@@ -1,4 +1,4 @@
-import '../assets/styles/components/footer.scss';
+import './footer.scss';
 
 function Footer(){
     let data = new Date();

@@ -1,20 +1,19 @@
-@import '../variaveis.scss';
-@import '../mixnins.scss';
-
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
 
 .formAreaBlock{
-    @include bg-bd-mg-pd-bdR($cor-secundaria,transparent,0, auto, 10px);
+    @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-secundaria,transparent,0, auto, 10px);
     height:600px;
     width: 400px;
-    @include flex-column-center(24px);
+    @include mixnins.flex-column-center(24px);
     align-items: center;
 
     .formIcons{
-        @include flex-center(12px);
+        @include mixnins.flex-center(12px);
        
         .googleIcon, .facebookIcon, .linkedinIcon{
-            @include bg-bd-mg-pd-bdR(rgb(247, 242, 242),transparent, auto,4px, 100%);
-            @include flex-center;
+            @include mixnins.bg-bd-mg-pd-bdR(rgb(247, 242, 242),transparent, auto,4px, 100%);
+            @include mixnins.flex-center;
             align-items: center;
             height: 40px;
             width: 40px;
@@ -29,7 +28,7 @@
     }
 
     .formItem{
-        @include flex-center
+        @include mixnins.flex-center
         
     }
 
@@ -37,6 +36,6 @@
         width: 200px;
     }
 
-    
+
 }
 

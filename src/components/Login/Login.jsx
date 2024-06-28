@@ -1,8 +1,8 @@
 import React, {useContext ,useEffect} from 'react';
-import { DisableForm } from "./Forms.jsx";
+import { DisableForm } from "../Forms/Forms.jsx";
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
 import { Input, Alert, Button, Form} from 'antd';
-import '../assets/styles/components/login.scss'
+import './login.scss'
 
 
 const SubmitButton = ({ form, children }) => {

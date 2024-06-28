@@ -1,60 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import Login from './components/Login.jsx'
-import CadastroLogin from './components/Forms.jsx'
-import TaskCard from './components/TaskCard.jsx'
 import './assets/styles/reset.scss'
+import App from './App'
+import Header from './components/Header/Header'
 
 
-const task =[{
-  nome: "Andar",
-  descricao:"Andar bastante",
-  status:"Pendente",
-  data: "12/30/2004"
-},{
-  nome: "Caminhar",
-  descricao:"Caminhar bastante",
-  status:"Pendente",
-  data: "12/30/2004"
-},
-{
-  nome: "Kaik",
-  descricao:"Parar de Bagunçar",
-  status:"Pendente",
-  data: "12/30/2004"
-},
-{nome: "Leticia",
-descricao:"Estudar Node.Js",
-status:"Pendente",
-data: "12/30/2004"
-},
-{nome: "Cainan",
-  descricao:"Fazer Grafos",
-  status:"Em Andamento",
-  data: "12/30/2004"
-  },
-{nome: "Cainan",
-    descricao:"Fazer Grafos",
-    status:"Em Andamento",
-    data: "12/30/2004"
-    }
-]
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
  
 
   <React.StrictMode>
-    <>
-    
-      <Header/>
-      <CadastroLogin></CadastroLogin>
-      {/* <TaskCard tasks={task}></TaskCard> */}
-      <Footer></Footer>
-      {/* <Login></Login> */}
-      {/* <Cadastro></Cadastro> */}
-    </>
+     <App></App>
+
   </React.StrictMode>,
 )
