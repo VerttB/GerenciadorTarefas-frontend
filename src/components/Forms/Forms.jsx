@@ -7,11 +7,11 @@ import './forms.scss';
 
 export const DisableForm = createContext();
 
-function CadastroLogin(){
+function Forms(props){
     
     const [disable, setDisable] = useState(false);
     const [titulo, setTitulo] = useState('Cadastre-se')
-    const [descricao, setDescricao] = useState("Não possui conta ainda? Realize o Cadastro Aqui")
+    const [descricao, setDescricao] = useState("Ainda não possui conta? Clique aqui para criar")
     let checker = disable;
 
     function handleDisable(){
@@ -23,20 +23,23 @@ function CadastroLogin(){
         const div = document.getElementById("slideDiv");
         if(disable === true){
             div.classList.add("slider");
+            setTitulo("Cadastrar");
+            setDescricao("Ainda não possui conta? Clique aqui para criar");
         }
         else{
             div.classList.remove("slider");
+            setTitulo("Login");
+            setDescricao("Já possuí conta? Realize o login");
         }
 
         
     }, [checker])
 
     return(
-        <>
-        <div className='formGeral' onClick={() => handleDisable()}>
+    
+        <div className='formGeral' >
             <input value={checker} onChange={() => handleDisable()} type='checkbox' id='slideForm'></input>
-            <label htmlFor="slideForm" id='formLabel'></label>
-            <div id="slideDiv">
+            <div id="slideDiv" onClick={() => handleDisable()}>
                 <h3>{titulo}</h3>
                 <h4>{descricao}</h4>
                 <button>{titulo}</button>
@@ -46,8 +49,8 @@ function CadastroLogin(){
                 <Cadastro disable={disable}></Cadastro>
                 </DisableForm.Provider>
         </div>
-        </>
+        
     )
 }
 
-export default CadastroLogin;
+export default Forms;

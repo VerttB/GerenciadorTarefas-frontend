@@ -1,16 +1,25 @@
 @use 'src/assets/styles/variaveis.scss';
 @use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
 
 .formAreaBlock{
     @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-secundaria,transparent,0, auto, 10px);
-    height:600px;
-    width: 400px;
+    height:800px;
+    width: 600px;
+    @include breakpoint.breakpoint(computador,max){
+        height:600px;
+        width: 500px;
+    }
     @include mixnins.flex-column-center(24px);
     align-items: center;
-
+    h2{
+        font-size:48px;
+        font-weight: 700;
+    }
     .formIcons{
         @include mixnins.flex-center(12px);
-       
+        position: relative;
+        margin-bottom: 50px;
         .googleIcon, .facebookIcon, .linkedinIcon{
             @include mixnins.bg-bd-mg-pd-bdR(rgb(247, 242, 242),transparent, auto,4px, 100%);
             @include mixnins.flex-center;
@@ -28,14 +37,19 @@
     }
 
     .formItem{
-        @include mixnins.flex-center
+        @include mixnins.flex-center;
+        .submitButton{
+            width: 50px;
+        }
         
     }
 
     Input{
-        width: 200px;
+        width: 350px;
+        height: 40px;
+
     }
 
-
+  
 }
 

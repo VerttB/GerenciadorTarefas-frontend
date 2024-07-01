@@ -14,11 +14,16 @@ header{
 
     .header_empresa_info{
         align-items: center;
-        display: inline-flex;
         text-align: left;
         gap: 12px;
         margin: 0 15px;
         @include mixnins.ff-fs-fw(fantasy, 16px, 600);
+
+        .link{
+            text-decoration: none;
+            display: inline-flex;
+            color: variaveis.$cor-texto;
+        }
     }
 
     .header_extras{

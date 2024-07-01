@@ -1,6 +1,6 @@
 
 import './header.scss'
-
+import { Link, useLocation } from 'react-router-dom';
 
 function Header(){
 
@@ -8,15 +8,17 @@ function Header(){
         <>
         <header>
             <div className="header_empresa_info">
-                <p>🧻</p>
-                <p>LetCorporation</p>
-                </div>
-
+                <Link className='link' to='/'>
+                        <p>🧻</p>
+                        <p>LetCorporation</p>
+                    </Link>
+                    </div>
+                
             <div className='header_extras'>
                 <ul>
-                    <li><a id='signUp' href='#'>Sign Up</a></li>
-                    <li><a id='signIn' href='#'>Sign In</a></li>
-                    <li><a id='sobre' href="#">Sobre</a></li>
+                    <li><Link id='signUp' to='/cadastro'>Sign Up</Link></li>
+                    <li><Link id='signIn' to='/login'>Sign In</Link></li>
+                    <li><Link id='sobre' to="/sobre">Sobre</Link></li>
                 </ul>
                 <input type="checkbox" id="slideTema" />
                 <label htmlFor="slideTema" id="temaLabel"></label>

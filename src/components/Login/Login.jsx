@@ -1,7 +1,7 @@
 import React, {useContext ,useEffect} from 'react';
 import { DisableForm } from "../Forms/Forms.jsx";
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
-import { Input, Alert, Button, Form} from 'antd';
+import { Input, Alert, Button, Form, Empty} from 'antd';
 import './login.scss'
 
 
@@ -28,12 +28,15 @@ const SubmitButton = ({ form, children }) => {
 
 function Login(){
   const [form] = Form.useForm();
+
   const disable = useContext(DisableForm);
 
 
   console.log(typeof(disable));
 
+  useEffect(() => {
 
+  })
 
   return(
     <div className="formAreaBlock">
@@ -49,15 +52,15 @@ function Login(){
 
         <Form.Item name="Email" validateTrigger="onBlur"
         rules={[{required: true}]} >
-          
-          <Input  placeholder="Email" prefix={<MailOutlined  />} />
+          <Input placeholder="Email" prefix={<MailOutlined  />} />
           </Form.Item>
           <Form.Item name="Senha" validateTrigger="onBlur"
           rules={[{required: true}]} >
         <Input.Password placeholder="Senha" prefix={<LockOutlined/>}/>
         </Form.Item>
+
         <Form.Item className='formItem'>
-        <SubmitButton className="logarButton" form={form}>Logar</SubmitButton>
+          <SubmitButton className="submitButton" form={form}>Logar</SubmitButton>
         </Form.Item>
       </Form>    
     </div>

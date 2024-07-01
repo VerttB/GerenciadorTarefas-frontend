@@ -8,7 +8,6 @@ function App(){
 
   const disable = useContext(DisableForm);
   console.log("cadastro:" ,disable);
-
   return(
     <div className="formAreaBlock cadastro" disabled="true">
       <h2>Sign Up</h2>

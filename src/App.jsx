@@ -1,6 +1,8 @@
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
-import CadastroLogin from "./components/Forms/Forms"
+import { BrowserRouter, Route , Routes} from "react-router-dom"
+import CadastroLogin from "./paginas/CadastroLogin/CadastroLogin"
+import Sobre from "./paginas/Sobre/Sobre"
 import TaskCard from "./components/TaskCard/TaskCard"
 
 const task =[{
@@ -40,11 +42,16 @@ const task =[{
 function App(){
 
     return(
-    <>
-     <Header></Header>
-     <CadastroLogin></CadastroLogin>
+    <BrowserRouter>
+    <Header></Header>
+     <Routes>
+        <Route path='/cadastro' element={<CadastroLogin></CadastroLogin>}/>
+        <Route path='/login' element={<CadastroLogin></CadastroLogin>}/>
+        <Route path='/atividades' element={<TaskCard tasks={task}></TaskCard>}/>
+        <Route path='/sobre' element={<Sobre></Sobre>}/>
+     </Routes>
      <Footer></Footer>
-    </>
+     </BrowserRouter>
     )
 }
 
