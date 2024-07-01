@@ -8,7 +8,7 @@ function Header(){
         <>
         <header>
             <div className="header_empresa_info">
-                <Link className='link' to='/'>
+                <Link className='link' to='/inicio'>
                         <p>🧻</p>
                         <p>LetCorporation</p>
                     </Link>
