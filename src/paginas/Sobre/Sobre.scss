@@ -1,0 +1,14 @@
+.sobre-main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCF8F3;
+    
+    .cards-conteiner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: fit-content;
+        gap: 24px;
+    }
+}

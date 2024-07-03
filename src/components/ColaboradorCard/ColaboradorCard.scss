@@ -1,0 +1,42 @@
+
+
+.colaborador-card{
+    height: 300px;
+    width: 300px;
+    background-color: #EEEDEB;
+    border-radius: 16px;
+    box-shadow: 3px 3px 10px rgb(168, 165, 165);
+    transition: .2s ease-in-out;
+
+    
+
+    .card-header{
+       height: 125px;
+       border-top-right-radius: 16px;
+       border-top-left-radius: 16px;
+        .card-image{
+            border-radius: 50%;
+            height: 100%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .card-conteudo{
+        text-align: center;
+        position: relative;
+        top: 25%;
+
+        h4{
+            font-weight: 700;
+        
+
+        }
+    }
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
