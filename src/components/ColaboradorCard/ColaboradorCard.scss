@@ -2,7 +2,7 @@
 
 
 .colaborador-card{
-    height: 300px;
+    height: 325px;
     width: 400px;
     background-color: #EEEDEB;
     border-radius: 16px;
@@ -31,21 +31,28 @@
         position: relative;
         top: 25%;
 
-        h4{
-            font-weight: 700;
-        
+        .conteudo-texto{
+            h4{
+                font-weight: 700;
 
-        }
-
-        .icones{
-            margin-top: 25px;
-
-
-            .icone{
-                font-size: 24px;
             }
         }
-    }
+            .icones{
+                margin-top: 24px;
+                @include mixnins.flex-center(24px);
+
+                .icone{
+                    font-size: 36px;
+                    transition: 0.1s ease-in;
+
+                    &:hover{
+                        cursor: pointer;
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        
+}
 
     &:hover{
         transform: scale(1.05);
