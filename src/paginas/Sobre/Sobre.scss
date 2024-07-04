@@ -1,14 +1,20 @@
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
 .sobre-main{
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 93vh;
+    @include mixnins.flex-center();
     background-color: #faf4dc;
-    
+
     .cards-conteiner{
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: fit-content;
         gap: 24px;
+
+        @include breakpoint.breakpoint(celular, max){
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
     }
 }

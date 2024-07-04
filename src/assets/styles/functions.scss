@@ -1,0 +1,22 @@
+@use "sass:math";
+
+@function toRem($tamanhoPX){
+
+    @if type-of($tamanhoPX) == 'number' and unit($tamanhoPX) == 'px'{
+        $tamanhoPX: math.div($tamanhoPX, 16px) * 1rem;
+    }
+    @else if(type-of($tamanhoPX) == 'list'){
+        $listaFontes: ();
+        @each $tamanho in $tamanhoPX{
+            @if type-of($tamanho) == 'number' and unit($tamanho) == 'px'{
+                $tamanho: math.div($tamanho, 16px) * 1rem;
+        }
+        $listaFontes: append($listaFontes, $tamanho);
+    }
+    @return $listaFontes;
+    }
+
+    @return $tamanhoPX;
+    
+    
+}

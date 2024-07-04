@@ -11,8 +11,8 @@
 
     .cardItem{
         cursor: pointer;
-        width: 400px;
-        transition: 0.5 ease-in-out;
+        @include mixnins.setHW($w: 400px);
+        transition: 0.5s ease-in-out;
         
         .ant-card-head{
             background-color: rgb(219, 209, 209);

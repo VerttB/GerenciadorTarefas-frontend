@@ -1,22 +1,40 @@
 @use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
 
-
-.colaborador-card{
-    height: 325px;
-    width: 400px;
+.colaborador-card {
+    @include mixnins.setHW(325px, 400px);
     background-color: #EEEDEB;
     border-radius: 16px;
     box-shadow: 3px 3px 10px rgb(168, 165, 165);
     transition: .2s ease-in-out;
 
-    
+    @include breakpoint.breakpoint(computador, max) {
+        @include mixnins.setHW(300px, 300px);
+    }
 
-    .card-header{
-       height: 125px;
-       border-top-right-radius: 16px;
-       border-top-left-radius: 16px;
-       
-        .card-image{
+    @include breakpoint.breakpoint(celular, max) {
+        @include mixnins.setHW(130px, 200px);
+        
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .card-header {
+        @include mixnins.setHW(125px);
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+
+        @include breakpoint.breakpoint(computador, max) {
+            @include mixnins.setHW(100px);
+        }
+
+        @include breakpoint.breakpoint(celular, max) {
+            @include mixnins.setHW(40px);
+        }
+
+        .card-image {
             border-radius: 50%;
             height: 100%;
             position: relative;
@@ -26,35 +44,39 @@
         }
     }
 
-    .card-conteudo{
+    .card-conteudo {
         text-align: center;
         position: relative;
         top: 25%;
 
-        .conteudo-texto{
-            h4{
+        .conteudo-texto {
+            h4 {
                 font-weight: 700;
 
             }
         }
-            .icones{
-                margin-top: 24px;
-                @include mixnins.flex-center(24px);
 
-                .icone{
+        .icones {
+            margin-top: 24px;
+            @include mixnins.flex-center(24px);
+
+            a {
+                text-decoration: none;
+                color: black;
+
+                .icone {
                     font-size: 36px;
                     transition: 0.1s ease-in;
 
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
                         transform: scale(1.15);
                     }
                 }
             }
-        
-}
+        }
 
-    &:hover{
-        transform: scale(1.05);
     }
+
+    
 }

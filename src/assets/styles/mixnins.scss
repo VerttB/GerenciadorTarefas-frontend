@@ -1,28 +1,36 @@
+@use './functions.scss';
+
 @mixin ff-fs-fw($ff: Arial, $fs: 12px, $fw:600){
     font-family: $ff;
-    font-size: $fs;
+    font-size: functions.toRem($fs);
     font-weight: $fw;
 }
 
 @mixin bg-bd-mg-pd-bdR($bg: transparent, $bd:solid 1px black, $mg:0,$pd:0,$bdR:0px){
     background-color: $bg;
     border: $bd;
-    margin: $mg;
-    padding: $pd;
-    border-radius: $bdR;
+    margin: functions.toRem($mg);
+    padding: functions.toRem($pd);
+    border-radius: functions.toRem($bdR);
 }
 
 
 @mixin flex-center($gap:0px){
     display: flex;
     justify-content: center;
-    gap: $gap;
+    align-items: center;
+    gap:  functions.toRem($gap);
 }
 
 
 @mixin flex-column-center($gap: 0px){
     @include flex-center;
     flex-direction: column;
-    gap: $gap;
+    gap: functions.toRem($gap);
 
+}
+
+@mixin setHW($h: auto, $w: auto){
+    height: functions.toRem($h);
+    width: functions.toRem($w);
 }
