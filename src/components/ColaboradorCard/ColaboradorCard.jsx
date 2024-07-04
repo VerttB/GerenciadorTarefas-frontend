@@ -1,11 +1,12 @@
 import './ColaboradorCard.scss'
 
+import { LinkedinFilled, GithubFilled} from '@ant-design/icons';
 
+function ColaboradorCard({color, secundaryColor, image, nome, children}){
 
-function ColaboradorCard({color, image, nome}){
-
+    //secundaryColor = color.replace()
     const corFundo = {
-        backgroundColor: color,
+        background: `linear-gradient(to bottom, ${color}, ${secundaryColor} `
     }
     return(
         <div className="colaborador-card">
@@ -14,9 +15,10 @@ function ColaboradorCard({color, image, nome}){
             </div>
             <div className="card-conteudo">
                 <h4>{nome}</h4>
-
+                <h5>{children}</h5>
                 <div className="icones">
-
+                    <LinkedinFilled className='icone'></LinkedinFilled>
+                    <GithubFilled className='icone'></GithubFilled>
                 </div>
             </div>
         </div>

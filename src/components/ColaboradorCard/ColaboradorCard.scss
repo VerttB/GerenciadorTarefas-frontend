@@ -1,8 +1,9 @@
+@use 'src/assets/styles/mixnins.scss';
 
 
 .colaborador-card{
     height: 300px;
-    width: 300px;
+    width: 400px;
     background-color: #EEEDEB;
     border-radius: 16px;
     box-shadow: 3px 3px 10px rgb(168, 165, 165);
@@ -14,6 +15,7 @@
        height: 125px;
        border-top-right-radius: 16px;
        border-top-left-radius: 16px;
+       
         .card-image{
             border-radius: 50%;
             height: 100%;
@@ -33,6 +35,15 @@
             font-weight: 700;
         
 
+        }
+
+        .icones{
+            margin-top: 25px;
+
+
+            .icone{
+                font-size: 24px;
+            }
         }
     }
 
