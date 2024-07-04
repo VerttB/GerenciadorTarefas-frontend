@@ -2,7 +2,7 @@ import './ColaboradorCard.scss'
 
 import { LinkedinFilled, GithubFilled} from '@ant-design/icons';
 
-function ColaboradorCard({color, secundaryColor, github, nome, titulo, tecnologia}){
+function ColaboradorCard({color, secundaryColor, github, nome, titulo, tecnologia, linkedin}){
 
     //secundaryColor = color.replace()
     const corFundo = {
@@ -20,7 +20,7 @@ function ColaboradorCard({color, secundaryColor, github, nome, titulo, tecnologi
                     <p>{tecnologia}</p>
                 </div>
                 <div className="icones">
-                    <a href={github} target='_blank' ><LinkedinFilled className='icone'></LinkedinFilled></a>
+                    <a href={linkedin} target='_blank' ><LinkedinFilled className='icone'></LinkedinFilled></a>
                    <a href={github} target='_blank'> <GithubFilled className='icone'></GithubFilled></a>
                 </div>
             </div>
