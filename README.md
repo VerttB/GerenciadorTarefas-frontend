@@ -9,9 +9,9 @@ Currently, two official plugins are available:
 
 # Bibliotecas usadas
 ~~~javascript
-- npm install vite
-- npm install antd
-- npm install scss
+npm install vite
+npm install antd
+npm install scss
 ~~~
 Da pra instalar tudo só usando o  comando:
 ~~~javascript

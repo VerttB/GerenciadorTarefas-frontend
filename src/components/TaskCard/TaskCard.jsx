@@ -1,18 +1,27 @@
 
-import {Card} from 'antd';
 import PropTypes from "prop-types";
-import "./task.scss";
+import "./TaskCard.scss";
 
 function TaskCard({tasks}){
 
     return(
         <section className='taskItems'>
-            {tasks.map((task, index) =>(
-                <Card key={index} className='cardItem' title={task.nome} >
-                <p>{task.descricao}</p>
-                <p>{task.status}</p>
-                <p>{task.data}</p>
-                </Card>))}
+
+            {tasks.map((task,index) =>(
+            <div key={index} className='card-conteiner'>
+                <div className='card-header'>
+                <h4>{task.nome}</h4>
+                </div>
+                <div className='card-descricao'>
+                    <p>{task.descricao}</p>
+                    <p>{task.data}</p>
+                    <div className='card-status'>
+                    <div className='bola'></div>
+                    <p>{task.status}</p>
+                    </div>
+                </div>
+            </div>
+            ))}
         </section>
     )
 }
@@ -25,7 +34,7 @@ TaskCard.propTypes = {
 }
 
 TaskCard.defaultProps = {
-    nome:" ",
+    nome:"",
     descricao:"",
     status:"",
     data:""

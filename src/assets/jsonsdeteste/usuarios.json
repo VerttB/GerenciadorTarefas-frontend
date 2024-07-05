@@ -1,0 +1,32 @@
+[
+    {
+        "userId": 1,
+        "nome": "Alice Silva",
+        "email": "alice.silva@example.com",
+        "senha": "alice123"
+    },
+    {
+        "userId": 2,
+        "nome": "Bruno Costa",
+        "email": "bruno.costa@example.com",
+        "senha": "bruno456"
+    },
+    {
+        "userId": 3,
+        "nome": "Carla Mendes",
+        "email": "carla.mendes@example.com",
+        "senha": "carla789"
+    },
+    {
+        "userId": 4,
+        "nome": "Daniel Souza",
+        "email": "daniel.souza@example.com",
+        "senha": "daniel012"
+    },
+    {
+        "userId": 5,
+        "nome": "Eva Lima",
+        "email": "eva.lima@example.com",
+        "senha": "eva345"
+    }
+]

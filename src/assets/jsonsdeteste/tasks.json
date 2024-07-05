@@ -1,0 +1,142 @@
+[
+    {
+        "nome": "Tarefa 1",
+        "descricao": "Descrição da tarefa 1",
+        "status": "Em andamento",
+        "data": "2024-07-05",
+        "userId": 1
+    },
+    {
+        "nome": "Tarefa 2",
+        "descricao": "Descrição da tarefa 2",
+        "status": "Concluída",
+        "data": "2024-07-04",
+        "userId": 2
+    },
+    {
+        "nome": "Tarefa 3",
+        "descricao": "Descrição da tarefa 3",
+        "status": "Pendente",
+        "data": "2024-07-03",
+        "userId": 3
+    },
+    {
+        "nome": "Tarefa 4",
+        "descricao": "Descrição da tarefa 4",
+        "status": "Em andamento",
+        "data": "2024-07-02",
+        "userId": 4
+    },
+    {
+        "nome": "Tarefa 5",
+        "descricao": "Descrição da tarefa 5",
+        "status": "Concluída",
+        "data": "2024-07-01",
+        "userId": 5
+    },
+    {
+        "nome": "Tarefa 6",
+        "descricao": "Descrição da tarefa 6",
+        "status": "Pendente",
+        "data": "2024-06-30",
+        "userId": 1
+    },
+    {
+        "nome": "Tarefa 7",
+        "descricao": "Descrição da tarefa 7",
+        "status": "Em andamento",
+        "data": "2024-06-29",
+        "userId": 2
+    },
+    {
+        "nome": "Tarefa 8",
+        "descricao": "Descrição da tarefa 8",
+        "status": "Concluída",
+        "data": "2024-06-28",
+        "userId": 3
+    },
+    {
+        "nome": "Tarefa 9",
+        "descricao": "Descrição da tarefa 9",
+        "status": "Pendente",
+        "data": "2024-06-27",
+        "userId": 4
+    },
+    {
+        "nome": "Tarefa 10",
+        "descricao": "Descrição da tarefa 10",
+        "status": "Em andamento",
+        "data": "2024-06-26",
+        "userId": 5
+    },
+    {
+        "nome": "Tarefa 11",
+        "descricao": "Descrição da tarefa 11",
+        "status": "Concluída",
+        "data": "2024-06-25",
+        "userId": 1
+    },
+    {
+        "nome": "Tarefa 12",
+        "descricao": "Descrição da tarefa 12",
+        "status": "Pendente",
+        "data": "2024-06-24",
+        "userId": 2
+    },
+    {
+        "nome": "Tarefa 13",
+        "descricao": "Descrição da tarefa 13",
+        "status": "Em andamento",
+        "data": "2024-06-23",
+        "userId": 3
+    },
+    {
+        "nome": "Tarefa 14",
+        "descricao": "Descrição da tarefa 14",
+        "status": "Concluída",
+        "data": "2024-06-22",
+        "userId": 4
+    },
+    {
+        "nome": "Tarefa 15",
+        "descricao": "Descrição da tarefa 15",
+        "status": "Pendente",
+        "data": "2024-06-21",
+        "userId": 5
+    },
+    {
+        "nome": "Tarefa 16",
+        "descricao": "Descrição da tarefa 16",
+        "status": "Em andamento",
+        "data": "2024-06-20",
+        "userId": 1
+    },
+    {
+        "nome": "Tarefa 17",
+        "descricao": "Descrição da tarefa 17",
+        "status": "Concluída",
+        "data": "2024-06-19",
+        "userId": 2
+    },
+    {
+        "nome": "Tarefa 18",
+        "descricao": "Descrição da tarefa 18",
+        "status": "Pendente",
+        "data": "2024-06-18",
+        "userId": 3
+    },
+    {
+        "nome": "Tarefa 19",
+        "descricao": "Descrição da tarefa 19",
+        "status": "Em andamento",
+        "data": "2024-06-17",
+        "userId": 4
+    },
+    {
+        "nome": "Tarefa 20",
+        "descricao": "Descrição da tarefa 20",
+        "status": "Concluída",
+        "data": "2024-06-16",
+        "userId": 5
+    }
+]

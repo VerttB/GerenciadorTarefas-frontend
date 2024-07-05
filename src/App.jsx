@@ -9,7 +9,12 @@ import React, {useState} from 'react'
 
 function App(){
 
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState({
+        "userId": 3,
+        "nome": "Carla Mendes",
+        "email": "carla.mendes@example.com",
+        "senha": "carla789"
+    });
 
     return(
     <BrowserRouter>
@@ -18,7 +23,7 @@ function App(){
         <Route path='/inicio' element={<Inicio></Inicio>}/>
         <Route path='/cadastro' element={<CadastroLogin login={false}></CadastroLogin>}/>
         <Route path='/login' element={<CadastroLogin login={true}></CadastroLogin>}/>
-        <Route path='/atividades' element={<Atividades user={user} tasks={task}></Atividades>}/>
+        <Route path='/atividades' element={<Atividades user={user} ></Atividades>}/>
         <Route path='/sobre' element={<Sobre></Sobre>}/>
         <Route path="*" element={<Navigate to="/inicio" />} />
      </Routes>
