@@ -47,7 +47,8 @@ function Sobre() {
         <main className="sobre-main">
             <div className="cards-conteiner">
                 {colaboradores.map((c) =>
-                    <ColaboradorCard key={c.nome} color={c.color}
+                    <ColaboradorCard key={c.nome}
+                        color={c.color}
                         secundaryColor={c.secundaryColor}
                         github={c.github}
                         nome={c.nome}

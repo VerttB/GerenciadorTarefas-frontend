@@ -7,40 +7,6 @@ import Inicio from "./paginas/Inicio/Inicio"
 import Atividades from "./paginas/Atividades/Atividades"
 import React, {useState} from 'react'
 
-const task =[{
-    nome: "Andar",
-    descricao:"Andar bastante",
-    status:"Pendente",
-    data: "12/30/2004"
-  },{
-    nome: "Caminhar",
-    descricao:"Caminhar bastante",
-    status:"Pendente",
-    data: "12/30/2004"
-  },
-  {
-    nome: "Kaik",
-    descricao:"Parar de Bagunçar",
-    status:"Pendente",
-    data: "12/30/2004"
-  },
-  {nome: "Leticia",
-  descricao:"Estudar Node.Js",
-  status:"Pendente",
-  data: "12/30/2004"
-  },
-  {nome: "Cainan",
-    descricao:"Fazer Grafos",
-    status:"Em Andamento",
-    data: "12/30/2004"
-    },
-  {nome: "Cainan",
-      descricao:"Fazer Grafos",
-      status:"Em Andamento",
-      data: "12/30/2004"
-      }
-  ]
-
 function App(){
 
     const [user, setUser] = useState('');
