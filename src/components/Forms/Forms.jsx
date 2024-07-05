@@ -1,22 +1,24 @@
 import Login from "../Login/Login";
 import Cadastro from "../Login/Cadastro";
-
-
+import {redirect, Link, useLocation} from 'react-router-dom'
 import React, { useState, createContext, useEffect } from "react";
 import './forms.scss';
 
 export const DisableForm = createContext();
 
-function Forms(props){
+function Forms(){
+    const local = useLocation();
     
-    const [disable, setDisable] = useState(false);
-    const [titulo, setTitulo] = useState('Cadastre-se')
-    const [descricao, setDescricao] = useState("Ainda não possui conta? Clique aqui para criar")
-    let checker = disable;
+    const [disable, setDisable] = useState(local.pathname === '/login' ? true : false);
+    const [titulo, setTitulo] = useState('Cadastre-se');
+    const [descricao, setDescricao] = useState("Ainda não possui conta? Clique aqui para criar");
+    //let checker = disable;
 
     function handleDisable(){
-        setDisable(!checker);
-        console.log(checker);
+        setDisable(d => !d);
+
+
+        
     }
    
     useEffect(()=>{
@@ -33,12 +35,12 @@ function Forms(props){
         }
 
         
-    }, [checker])
+    }, [disable])
 
     return(
     
         <div className='formGeral' >
-            <input value={checker} onChange={() => handleDisable()} type='checkbox' id='slideForm'></input>
+            <input value={disable} type='checkbox' id='slideForm'></input>
             <div id="slideDiv" onClick={() => handleDisable()}>
                 <h3>{titulo}</h3>
                 <h4>{descricao}</h4>

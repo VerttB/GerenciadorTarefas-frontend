@@ -1,8 +1,8 @@
 import Forms from "src/components/Forms/Forms.jsx";
 
-function CadastroLogin(){
+function CadastroLogin({login}){
     return(
-        <Forms></Forms>
+        <Forms login={login}></Forms>
     )
 }
 

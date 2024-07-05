@@ -15,9 +15,9 @@
 }
 
 
-@mixin flex-center($gap:0px){
+@mixin flex-center($gap:0px, $just: center){
     display: flex;
-    justify-content: center;
+    justify-content: $just;
     align-items: center;
     gap:  functions.toRem($gap);
 }
