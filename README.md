@@ -8,10 +8,12 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # Bibliotecas usadas
+~~~javascript
 - npm install vite
 - npm install antd
 - npm install scss
-
+~~~
+Da pra instalar tudo só usando o  comando:
 ~~~javascript
-Da pra instalar tudo só usando o npm install
+npm install
 ~~~
