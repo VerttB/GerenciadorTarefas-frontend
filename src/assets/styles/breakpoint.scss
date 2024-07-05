@@ -1,19 +1,15 @@
 $breakpoints: (
     celular: (
-        min: 576px,
-        max: 767px,
+        min: 0px,
+        max: 640px,
     ),
     tablet: (
         min: 768px,
-        max: 991px
-    ),
-    tabletGrande: (
-        min: 992px,
-        max: 1279px
+        max: 1023px
     ),
     computador: (
-        min: 1280px,
-        max: 1299px
+        min: 1024px,
+        max: 1399px
     ),
     wide: (
       min: 1400px,

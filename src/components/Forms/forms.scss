@@ -8,7 +8,8 @@
     margin: 50px 0 0 0;
     height: 100%;
     @include breakpoint.breakpoint(computador, max){
-        margin: 25px 0;
+        margin: 20px 0;
+        height: 10px;
     }
     #slideForm{
         display: none

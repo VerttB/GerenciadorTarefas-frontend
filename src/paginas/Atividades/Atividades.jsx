@@ -5,10 +5,13 @@ import { useEffect } from "react";
 function Atividades({tasks, user}){
 
     
-    useEffect(()=> {
-        if(user === '') {redirect('/cadastro')}
-        console.log(user === '');   
-     })
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        if (user === '') {
+            navigate('/cadastro');
+        }
+    }, [user, navigate]);
 
 
     return(

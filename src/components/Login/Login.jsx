@@ -32,7 +32,6 @@ function Login(){
   const disable = useContext(DisableForm);
 
 
-  console.log(typeof(disable));
 
   useEffect(() => {
 
