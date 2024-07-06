@@ -3,12 +3,22 @@ import { PlusOutlined, CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { Modal, Form, Input } from 'antd';
 
-function CriarTask(){
+function CriarTask(props){
     const [titulo, setTitulo] = useState("")
     const [descricao, setDescricao] = useState("")
     const [data,setData] = useState("")
     const [open, setOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
+
+    function cria(){
+        props.change({
+            "nome": "Tarefa 19",
+            "descricao": "Descrição da tarefa 19",
+            "status": "Em andamento",
+            "data": "2024-06-17",
+            "userId": 3
+        })
+    }
 
     const showModal = () => {
       setOpen(true);
@@ -28,7 +38,7 @@ function CriarTask(){
 
     return(
         <div className='task-botoes'>
-            <button onClick={showModal} className="adicionar" color="green" type="primary">Adicionar <PlusOutlined /></button>
+            <button onClick={cria} className="adicionar" color="green" type="primary">Adicionar <PlusOutlined /></button>
             <Modal
                 title="Title"
                 open={open}

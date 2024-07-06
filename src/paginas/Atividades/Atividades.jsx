@@ -14,18 +14,17 @@ function Atividades({user}){
             .then((response) => response.json())
             .then((data)=> {setTasks(data.filter( d => d.userId === user.userId))})
         }
-            
-
         else{
             navigate('/cadastro');
         }
         console.log(tasks);
+
     }, [navigate]);
 
 
     return(
         <>
-        <CriarTask></CriarTask>
+        <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
         <TaskCard tasks={tasks}></TaskCard>
     </>
     )
