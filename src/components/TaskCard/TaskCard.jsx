@@ -4,7 +4,6 @@ import "./TaskCard.scss";
 import { EditOutlined } from '@ant-design/icons';
 function TaskCard({tasks}){
   
-
     return(
         <section className='taskItems'>
             
