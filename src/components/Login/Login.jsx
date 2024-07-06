@@ -1,4 +1,4 @@
-import React, {useContext ,useEffect} from 'react';
+import React, {useContext ,useEffect, useState} from 'react';
 import { DisableForm } from "../Forms/Forms.jsx";
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
 import { Input, Alert, Button, Form, Empty} from 'antd';
@@ -26,16 +26,12 @@ const SubmitButton = ({ form, children }) => {
 };
 
 
-function Login(){
+function Login(props){
   const [form] = Form.useForm();
 
-  const disable = useContext(DisableForm);
 
+  console.log("contexto", props.disable);
 
-
-  useEffect(() => {
-
-  })
 
   return(
     <div className="formAreaBlock">
@@ -47,15 +43,15 @@ function Login(){
       </div>
 
 
-      <Form disabled={!disable} className='formLogin' form={form} name='formLogin' layout='vertical' autoComplete='off'>
+      <Form disabled={!props.disable} className='formLogin' form={form} name='formLogin' layout='vertical' autoComplete='off'>
 
         <Form.Item name="Email" validateTrigger="onBlur"
         rules={[{required: true}]} >
-          <Input placeholder="Email" prefix={<MailOutlined  />} />
+          <Input value={props.email} placeholder="Email" prefix={<MailOutlined  />} />
           </Form.Item>
           <Form.Item name="Senha" validateTrigger="onBlur"
           rules={[{required: true}]} >
-        <Input.Password placeholder="Senha" prefix={<LockOutlined/>}/>
+        <Input.Password value={props.senha} placeholder="Senha" prefix={<LockOutlined/>}/>
         </Form.Item>
 
         <Form.Item className='formItem'>

@@ -1,0 +1,45 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
+.formGeral{
+    @include mixnins.flex-center;
+    align-items: center;
+    margin: 20px 0 0 0;
+    height: 100vh;
+    @include breakpoint.breakpoint(computador, max){
+        margin: 20px 0;
+        height: 10px;
+    }
+    #slideForm{
+        display: none
+    }
+    #slideDiv{
+        @include mixnins.bg-bd-mg-pd-bdR(black,transparent,0, auto, 10px);
+        @include breakpoint.breakpoint(computador, max){
+            left: 11%;
+            height:600px;
+            width: 525px;
+        }
+        left: 26%;
+        height:800px;
+        width: 625px;
+        @include mixnins.flex-column-center(20px);
+        align-items: center;
+        z-index: 1;
+        position: absolute;
+        transition: 0.75s ease-in-out;
+
+    }
+
+   .slider{
+    transform: translateX(95%);
+    @include breakpoint.breakpoint(computador, max){
+        transform: translateX(95%);
+    }
+        
+    }
+
+}
+
+

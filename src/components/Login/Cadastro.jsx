@@ -1,12 +1,10 @@
-import React, {useContext} from 'react';
 import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,UserOutlined} from '@ant-design/icons';
 import { Input, Space, Button, Form } from 'antd';
 import './login.scss'
 import { DisableForm } from "../Forms/Forms";
 
-function App(){
+function Cadastro(props){
 
-  const disable = useContext(DisableForm);
   return(
     <div className="formAreaBlock cadastro" disabled="true">
       <h2>Sign Up</h2>
@@ -17,28 +15,28 @@ function App(){
       </div>
     
 
-    <Form name='formCadastro' disabled={disable}>
+    <Form name='formCadastro' disabled={props.disable}>
 
       <Form.Item name="Nome" validateTrigger="onBlur" 
       rules={[{
         required: true,
       }]}>
 
-       <Input placeholder="Nome" prefix={<UserOutlined  />} />
+       <Input value={props.nome} placeholder="Nome" prefix={<UserOutlined  />} />
        </Form.Item>
 
        <Form.Item name="Email" validateTrigger="onBlur"  
       rules={[{
         required: true,
       }]}>
-       <Input placeholder="Email" prefix={<MailOutlined  />} />
+       <Input value={props.email} placeholder="Email" prefix={<MailOutlined  />} />
        </Form.Item>
 
-       <Form.Item name="Senha" validateTrigger="onBlur" 
+       <Form.Item  name="Senha" validateTrigger="onBlur" 
       rules={[{
         required: true,
       }]}>
-      <Input.Password placeholder="Senha" prefix={<LockOutlined/>}/>
+      <Input.Password value={props.senha} placeholder="Senha" prefix={<LockOutlined/>}/>
      </Form.Item>
       </Form>
       
@@ -49,4 +47,4 @@ function App(){
   )
 }
 
-export default App
+export default Cadastro
