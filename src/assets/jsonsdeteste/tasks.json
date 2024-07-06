@@ -9,7 +9,7 @@
     {
         "nome": "Tarefa 2",
         "descricao": "Descrição da tarefa 2",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-07-04",
         "userId": 2
     },
@@ -30,7 +30,7 @@
     {
         "nome": "Tarefa 5",
         "descricao": "Descrição da tarefa 5",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-07-01",
         "userId": 5
     },
@@ -51,7 +51,7 @@
     {
         "nome": "Tarefa 8",
         "descricao": "Descrição da tarefa 8",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-06-28",
         "userId": 3
     },
@@ -72,7 +72,7 @@
     {
         "nome": "Tarefa 11",
         "descricao": "Descrição da tarefa 11",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-06-25",
         "userId": 1
     },
@@ -93,7 +93,7 @@
     {
         "nome": "Tarefa 14",
         "descricao": "Descrição da tarefa 14",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-06-22",
         "userId": 4
     },
@@ -114,7 +114,7 @@
     {
         "nome": "Tarefa 17",
         "descricao": "Descrição da tarefa 17",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-06-19",
         "userId": 2
     },
@@ -135,7 +135,7 @@
     {
         "nome": "Tarefa 20",
         "descricao": "Descrição da tarefa 20",
-        "status": "Concluída",
+        "status": "Concluida",
         "data": "2024-06-16",
         "userId": 5
     }

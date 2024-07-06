@@ -9,36 +9,27 @@
     border: 1px solid black;
     width: fit-content;
 
-    .cardItem{
+    .card-conteiner{
         cursor: pointer;
         @include mixnins.setHW($w: 400px);
         transition: 0.2s ease-in-out;
-        
-        .ant-card-head{
-            background-color: rgb(219, 209, 209);
-        }
 
         &:hover{
             transform:scale(1.007)
         }
-    }
-
-    .card-conteiner{
-        @extend .cardItem;
         .card-header{
             @include mixnins.setHW(50px);
-            @include mixnins.bg-bd-mg-pd-bdR($bd: none,$bdR:10px 10px 0 0, $pd: 10px 20px);
+            @include mixnins.bg-bd-mg-pd-bdR($bd: transparent,$bdR:10px 10px 0 0, $pd: 10px 20px);
             display: flex;
             align-items: center;
+            @include mixnins.flex-center($gap: 10px, $just: none);
             background-color: aqua;
         }
         .card-descricao{
             display: flex;
             flex-direction: column;
             gap: 12px;
-            background-color: #EEEEEE;
-            border-radius: 0 0 10px 10px;
-            padding: 20px;
+            @include mixnins.bg-bd-mg-pd-bdR($bg:#EEEEEE,$bd: transparent, $pd:20px, $bdR: 0 0 10px 10px);
             @include mixnins.ff-fs-fw($fs:14px, $fw: 500);
 
             .card-status{
@@ -47,6 +38,7 @@
                 .bola{
                     width: 5px;
                     height: 5px;
+                    border-radius: 50%;
                     background-color: aquamarine;
                 }
             }

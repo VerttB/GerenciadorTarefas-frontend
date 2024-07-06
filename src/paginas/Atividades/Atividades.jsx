@@ -1,4 +1,5 @@
 import TaskCard from "src/components/TaskCard/TaskCard";
+import CriarTask from "src/components/TaskCard/CriarTask";
 import { Navigate,redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
@@ -23,9 +24,10 @@ function Atividades({user}){
 
 
     return(
-       
+        <>
+        <CriarTask></CriarTask>
         <TaskCard tasks={tasks}></TaskCard>
-    
+    </>
     )
 }
 

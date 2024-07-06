@@ -4,7 +4,6 @@ import { LinkedinFilled, GithubFilled} from '@ant-design/icons';
 
 function ColaboradorCard({color, secundaryColor, github, nome, titulo, tecnologia, linkedin}){
 
-    //secundaryColor = color.replace()
     const corFundo = {
         background: `linear-gradient(to bottom, ${color}, ${secundaryColor} `
     }

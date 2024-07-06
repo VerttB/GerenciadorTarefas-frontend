@@ -1,0 +1,19 @@
+.task-botoes{
+    width: 100%;
+    display: flex;
+
+    .adicionar{
+        background-color: #06D001;
+        padding: 8px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        border: transparent;
+
+        &:hover{
+            background-color: lighten(#06D001, $amount: 20);
+        }
+    }
+
+}
