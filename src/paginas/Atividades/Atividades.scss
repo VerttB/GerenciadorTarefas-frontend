@@ -1,0 +1,22 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+
+.atividades-page{
+    @include mixnins.setHW(100vh,100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .taskItems{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4,400px);
+        gap: 10px;
+        border: 1px solid black;
+        @include mixnins.setHW(80%,1600px);
+        align-content: start;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        @include mixnins.bg-bd-mg-pd-bdR(transparent, none, $pd: 10px);
+    }
+}

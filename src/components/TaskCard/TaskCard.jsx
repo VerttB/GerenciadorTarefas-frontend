@@ -1,14 +1,10 @@
 
-import PropTypes from "prop-types";
 import "./TaskCard.scss";
 import { EditOutlined } from '@ant-design/icons';
-function TaskCard({tasks}){
+function TaskCard({task}){
   
     return(
-        <section className='taskItems'>
-            
-            {tasks.map((task,index) =>(
-            <div key={index} className='card-conteiner'>
+            <div className='card-conteiner'>
                 <div className='card-header'>
                 <h4>{task.nome}</h4>
                 <EditOutlined></EditOutlined>
@@ -27,23 +23,8 @@ function TaskCard({tasks}){
                     </div>
                 </div>
             </div>
-            ))}
-        </section>
+            
     )
-}
-
-TaskCard.propTypes = {
-    nome: PropTypes.string,
-    descricao: PropTypes.string,
-    status: PropTypes.string,
-    data: PropTypes.string
-}
-
-TaskCard.defaultProps = {
-    nome:"",
-    descricao:"",
-    status:"",
-    data:""
 }
 
 export default TaskCard;

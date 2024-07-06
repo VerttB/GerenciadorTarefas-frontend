@@ -2,17 +2,6 @@
 @use 'src/assets/styles/variaveis.scss';
 @use 'src/assets/styles/mixnins.scss';
 
-.taskItems{
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(4,400px);
-    gap: 10px;
-    border: 1px solid black;
-    width: 1800px;
-    align-content: start;
-    height: 50%;
-    overflow-y: scroll;
-    @include mixnins.bg-bd-mg-pd-bdR(transparent, none, $pd: 10px);
     .card-conteiner{
         cursor: pointer;
         @include mixnins.setHW($w: 400px);
@@ -51,4 +40,3 @@
     
 
     }
-}

@@ -8,7 +8,7 @@ import './login.scss'
 const SubmitButton = ({ form, children }) => {
   const [submittable, setSubmittable] = React.useState(false);
 
-  // Watch all values
+ 
   const values = Form.useWatch([], form);
   React.useEffect(() => {
     form

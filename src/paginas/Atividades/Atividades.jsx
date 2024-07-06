@@ -1,7 +1,11 @@
 import TaskCard from "src/components/TaskCard/TaskCard";
 import CriarTask from "src/components/TaskCard/CriarTask";
+import './Atividades.scss';
 import { Navigate,redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
+
+
+
 
 function Atividades({user}){
 
@@ -23,10 +27,12 @@ function Atividades({user}){
 
 
     return(
-        <>
-        <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
-        <TaskCard tasks={tasks}></TaskCard>
-    </>
+        <main className="atividades-page">
+            <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
+            <section className='taskItems'>
+                {tasks.map((t,i) => <TaskCard key={i} task={t}></TaskCard>)}
+            </section>
+        </main>
     )
 }
 
