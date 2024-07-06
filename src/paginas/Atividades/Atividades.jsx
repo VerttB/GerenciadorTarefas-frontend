@@ -17,6 +17,7 @@ function Atividades({user}){
             fetch('src/assets/jsonsdeteste/tasks.json')
             .then((response) => response.json())
             .then((data)=> {setTasks(data.filter( d => d.userId === user.userId))})
+            .catch((error)=> {console.error(error);});                                                                                                                              
         }
         else{
             navigate('/cadastro');

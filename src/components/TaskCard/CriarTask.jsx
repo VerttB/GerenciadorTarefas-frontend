@@ -1,26 +1,9 @@
 import './CriarTask.scss';
-import { PlusOutlined, CloseOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 import React, { useState , useForm} from 'react';
 import { Modal, Form, Input, Button } from 'antd';
 const {TextArea} = Input;
 
-const SubmitButton = ({ form, children }) => {
-  const [submittable, setSubmittable] = React.useState(false);
-  const values = Form.useWatch([], form);
-  React.useEffect(() => {
-    form
-      .validateFields({
-        validateOnly: true,
-      })
-      .then(() => setSubmittable(true))
-      .catch(() => setSubmittable(false));
-  }, [form, values]);
-  return (
-    <Button type="primary" htmlType="submit" disabled={!submittable}>
-      {children}
-    </Button>
-  );
-};
 
 function CriarTask(props){
 
@@ -38,32 +21,26 @@ function CriarTask(props){
     function handleDescricao(e){
       setDescricao(e.target.value)
     }
-    function cria(){
-        props.change({
-            "nome": "Tarefa 19",
-            "descricao": "Descrição da tarefa 19",
-            "status": "Em andamento",
-            "data": "2024-06-17",
-            "userId": 3
-        })
-    }
-
+ 
     const showModal = () => {
       setOpen(true);
     };
+
+    const handleSubmit = () => {
+      form.submit(props.change({
+        "nome": titulo,
+        "descricao": descricao,
+        "status": "Pendente",
+        "data": data.getDate(),
+
+      }));
+    }
     const handleEnviar = () => {
       setConfirmLoading(true);
       setTimeout(() => {
         setOpen(false);
         setConfirmLoading(false);
-  
-        form.submit(props.change({
-          "nome": titulo,
-          "descricao": descricao,
-          "status": "Pendente",
-          "data": data.getDate(),
-          
-        }));
+        handleSubmit();
 
       }, 2000);
     };
@@ -84,7 +61,7 @@ function CriarTask(props){
                 onOk={handleEnviar}
                 confirmLoading={confirmLoading}
                 onCancel={handleCancelar}>
-     <Form form={form}>
+     <Form form={form} preserve={false}>
         <Form.Item
         label='Titulo'
         name='titulo'
@@ -103,7 +80,6 @@ function CriarTask(props){
         </Form.Item>
      </Form>
       </Modal>
-            {/* <Button type="primary" danger>Deletar <CloseOutlined /></Button> */}
             </div>
     )
 }
