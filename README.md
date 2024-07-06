@@ -13,7 +13,12 @@ npm install vite
 npm install antd
 npm install scss
 ~~~
-Da pra instalar tudo só usando o  comando:
+# Da pra instalar tudo só usando o  comando:
 ~~~javascript
 npm install
+~~~
+
+# Rodar o Código
+~~~javascript
+npm run dev
 ~~~
