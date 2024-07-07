@@ -11,20 +11,16 @@ function App(){
 
 
 
-    const [user, setUser] = useState({
-        "userId": 4,
-        "nome": "Carla Mendes",
-        "email": "carla.mendes@example.com",
-        "senha": "carla789"
-    });
+    const [user, setUser] = useState({})
+        
 
     return(
     <BrowserRouter>
     <Header></Header>
      <Routes>
         <Route path='/inicio' element={<Inicio></Inicio>}/>
-        <Route path='/cadastro' element={<Forms changeUser={setUser} login={false}></Forms>}/>
-        <Route path='/login' element={<Forms login={true}></Forms>}/>
+        <Route path='/cadastro' element={<Forms setUser={setUser} changeUser={setUser} login={false}></Forms>}/>
+        <Route path='/login' element={<Forms setUser={setUser} login={true}></Forms>}/>
         <Route path='/atividades' element={<Atividades user={user} ></Atividades>}/>
         <Route path='/sobre' element={<Sobre></Sobre>}/>
         <Route path="*" element={<Navigate to="/inicio" />} />
