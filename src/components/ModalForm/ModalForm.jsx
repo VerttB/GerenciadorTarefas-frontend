@@ -26,7 +26,8 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "status": "Pendente",
       "data": data,
       "corFundo":' #5C2FC2',
-      "userId": userId
+      "userId": userId,
+      "dataFinal": '2024-09-09'
 
     });
   }

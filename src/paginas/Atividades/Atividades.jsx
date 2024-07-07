@@ -12,22 +12,41 @@ function Atividades({user}){
     const [tasks, setTasks] = useState([]);
     const navigate = useNavigate();
 
+    function sendDataBack(tarefa, rota, metodo){
+      fetch(rota, {
+        
+        method: metodo,
+        headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tarefa),
+  })
+  .then((response) => response.json())
+    .then(data => console.log('Resposta:', data))
+    .catch((error) => console.error());
+    }
+
     const updateTask = (updatedTask, index) => {
-        console.log(updatedTask)
+        console.log(updatedTask.tarefaId)
         setTasks(prevTasks =>
           prevTasks.map((task,i) =>
             i === index
-              ? { ...task, nome: updatedTask.nome, descricao: updatedTask.descricao }
+              ? { ...task, titulo: updatedTask.titulo, descricao: updatedTask.descricao, dataFinal: '2024-09-09'}
               : task
           )
         );
+        console.log(updatedTask)
+        const tarefaAtualizada =  {...updatedTask, user: { userId: user.userId }};
+        const rota = `http://localhost:8080/api/${user.userId}/atividades/${updatedTask.tarefaId}/editar_task`;
+        const metodo = 'PUT'
+        sendDataBack(tarefaAtualizada,rota, metodo)
       };
 
       const deleteTask = (index) => {
         setTasks(prevTasks =>
           prevTasks.filter((_, i) => i !== index)
         );
-
+        
       };
 
       const fetchDataGet = useCallback(() => {
@@ -52,17 +71,12 @@ function Atividades({user}){
         console.log(novaTask);
         setTasks(t => [...t, novaTask])
         const newTaskData = {...novaTask, user : { userId: user.userId}};
-
-        fetch(`http://localhost:8080/api/${user.userId}/atividades/criar_task`, {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newTaskData),
-    })
-    .then((response) => response.json())
-    .then(data => console.log('Resposta:', data))
-    .catch((error) => console.error());
+        const rota =`http://localhost:8080/api/${user.userId}/atividades/criar_task`;
+        const metodo = "POST"
+        console.log(rota)
+        sendDataBack(newTaskData, rota,metodo);
+     
+    
         
       }
     
@@ -80,7 +94,7 @@ function Atividades({user}){
         <main className="atividades-page">
             <CriarTask userId={user.userId} change={t => criarTask(t)}></CriarTask>
             <section className='taskItems'>
-                {tasks.map((t,i) => <TaskCard  key={t} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
+                {tasks.map((t,i) => <TaskCard  key={t.tarefaId} userId={user.userId} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
             </section>
         </main>
     )
