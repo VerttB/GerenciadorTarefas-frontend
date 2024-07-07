@@ -1,12 +1,16 @@
 
+import DeleteCard from "./DeleteCard/DeleteCard";
 import EditCard from "./EditCard/EditCard";
 import "./TaskCard.scss";
-function TaskCard({task, change, index}){
+function TaskCard({task, change, index, deleteTask}){
     return(
             <div className='card-conteiner'>
                 <div className='card-header'>
                 <h4>{task.nome}</h4>
+                <div className="funcoes">
                 <EditCard task={task} index={index} updateTask={change}></EditCard>
+                <DeleteCard deleteTask={deleteTask} index={index}></DeleteCard>
+                </div>
                 </div>
 
                 <div className='card-descricao'>

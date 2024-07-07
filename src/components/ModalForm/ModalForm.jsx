@@ -3,8 +3,11 @@ import { Modal, Form, Input } from 'antd';
 const { TextArea } = Input;
 
 function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", des = "", change }) {
+  const dataAtual = new Date();
+  const dataFormatada = `${dataAtual.getFullYear()}-${dataAtual.getMonth() + 1}-${dataAtual.getDate()}`
   const [titulo, setTitulo] = useState(tit);
   const [descricao, setDescricao] = useState(des);
+  const [data,setData] = useState(dataFormatada)
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
 
@@ -16,14 +19,28 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
     setDescricao(e.target.value);
   };
 
+  const handleCreate = () => {
+    change({
+      "nome": titulo,
+      "descricao": descricao,
+      "status": "Pendente",
+      "data": data,
+
+    });
+  }
+
+  const handleUpdate = () => {
+    change({
+      "nome": titulo,
+      "descricao": descricao
+    });
+  }
+
   const handleSave = () => {
     setConfirmLoading(true);
     setTimeout(() => {
       setConfirmLoading(false);
-      change({
-        "nome": titulo,
-        "descricao": descricao
-      });
+      if(tit === "") handleCreate(); else handleUpdate();
     }, 2000);
   };
 
@@ -45,22 +62,24 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
         <Form.Item
           label='Titulo'
           name='titulo'
+          initialValue={titulo}
           rules={[{
             required: true,
             message: "É necessário atribuir um titulo a task"
           }]}
         >
-          <Input value={titulo} name='titulo' onChange={handleTitulo}></Input>
+            <Input name='titulo' onChange={handleTitulo}></Input>
         </Form.Item>
         <Form.Item
           label='Descrição'
           name='descricao'
+          initialValue={descricao}
           rules={[{
             required: true,
             message: "É necessário atribuir uma descrição a task"
           }]}
         >
-          <TextArea value={descricao} name='descricao' onChange={handleDescricao}></TextArea>
+          <TextArea  name='descricao' onChange={handleDescricao}></TextArea>
         </Form.Item>
       </Form>
     </Modal>

@@ -22,6 +22,13 @@ function Atividades({user}){
           )
         );
       };
+
+      const deleteTask = (index) => {
+        setTasks(prevTasks =>
+          prevTasks.filter((_, i) => i !== index)
+        );
+      };
+    
     
     const navigate = useNavigate();
     useEffect(() => {
@@ -45,7 +52,7 @@ function Atividades({user}){
         <main className="atividades-page">
             <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
             <section className='taskItems'>
-                {tasks.map((t,i) => <TaskCard key={t.nome} task={t} arrayTask={tasks} index={i} change={updateTask}></TaskCard>)}
+                {tasks.map((t,i) => <TaskCard key={t.nome} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
             </section>
         </main>
     )
