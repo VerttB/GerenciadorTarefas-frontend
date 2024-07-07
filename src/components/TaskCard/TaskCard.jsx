@@ -1,13 +1,12 @@
 
+import EditCard from "./EditCard/EditCard";
 import "./TaskCard.scss";
-import { EditOutlined } from '@ant-design/icons';
-function TaskCard({task}){
-  
+function TaskCard({task, change, index}){
     return(
             <div className='card-conteiner'>
                 <div className='card-header'>
                 <h4>{task.nome}</h4>
-                <EditOutlined></EditOutlined>
+                <EditCard task={task} index={index} updateTask={change}></EditCard>
                 </div>
 
                 <div className='card-descricao'>

@@ -33,6 +33,12 @@ function Login(props){
   console.log("contexto", props.disable);
 
 
+  const handleSubmit = () => {
+    form.submit(
+      props.setEmail(email),
+      props.setSenha(senha));
+  }
+
   return(
     <div className="formAreaBlock">
       <h2>Sign Up</h2>
@@ -43,7 +49,7 @@ function Login(props){
       </div>
 
 
-      <Form disabled={!props.disable} className='formLogin' form={form} name='formLogin' layout='vertical' autoComplete='off'>
+      <Form onFinish={handleSubmit} disabled={!props.disable} className='formLogin' form={form} name='formLogin' layout='vertical' autoComplete='off'>
 
         <Form.Item name="Email" validateTrigger="onBlur"
         rules={[{required: true}]} >
@@ -51,7 +57,7 @@ function Login(props){
           </Form.Item>
           <Form.Item name="Senha" validateTrigger="onBlur"
           rules={[{required: true}]} >
-        <Input.Password value={props.senha} placeholder="Senha" prefix={<LockOutlined/>}/>
+        <Input.Password value={props.senha} onChange={() => setEmail()} placeholder="Senha" prefix={<LockOutlined/>}/>
         </Form.Item>
 
         <Form.Item className='formItem'>

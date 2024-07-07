@@ -11,6 +11,18 @@ function Atividades({user}){
 
     const [tasks, setTasks] = useState([]);
     
+
+    const updateTask = (updatedTask, index) => {
+        console.log(updatedTask)
+        setTasks(prevTasks =>
+          prevTasks.map((task,i) =>
+            i === index
+              ? { ...task, nome: updatedTask.nome, descricao: updatedTask.descricao }
+              : task
+          )
+        );
+      };
+    
     const navigate = useNavigate();
     useEffect(() => {
         if (Object.keys(user).length !== 0) {
@@ -27,11 +39,13 @@ function Atividades({user}){
     }, [navigate]);
 
 
+
+
     return(
         <main className="atividades-page">
             <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
             <section className='taskItems'>
-                {tasks.map((t,i) => <TaskCard key={i} task={t}></TaskCard>)}
+                {tasks.map((t,i) => <TaskCard key={t.nome} task={t} arrayTask={tasks} index={i} change={updateTask}></TaskCard>)}
             </section>
         </main>
     )
