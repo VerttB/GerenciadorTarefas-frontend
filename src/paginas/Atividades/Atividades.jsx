@@ -27,6 +27,7 @@ function Atividades({user}){
         setTasks(prevTasks =>
           prevTasks.filter((_, i) => i !== index)
         );
+
       };
 
       const fetchDataGet = useCallback(() => {
@@ -44,7 +45,28 @@ function Atividades({user}){
           navigate('/cadastro');
         }
       }, [user, navigate]);
+
+      
+
+      const criarTask = (novaTask) => {
+        console.log(novaTask);
+        setTasks(t => [...t, novaTask])
+        const newTaskData = {...novaTask, user : { userId: user.userId}};
+
+        fetch(`http://localhost:8080/api/${user.userId}/atividades/criar_task`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newTaskData),
+    })
+    .then((response) => response.json())
+    .then(data => console.log('Resposta:', data))
+    .catch((error) => console.error());
+        
+      }
     
+      
     
     
     useEffect(() => {
@@ -53,11 +75,12 @@ function Atividades({user}){
 
 
       console.log(tasks)
+      console.log("Usuario", user.userId)
     return(
         <main className="atividades-page">
-            <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
+            <CriarTask userId={user.userId} change={t => criarTask(t)}></CriarTask>
             <section className='taskItems'>
-                {tasks.map((t,i) => <TaskCard key={t} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
+                {tasks.map((t,i) => <TaskCard  key={t} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
             </section>
         </main>
     )

@@ -12,7 +12,7 @@ function CriarTask(props){
     return(
         <div className='task-botoes'>
             <button onClick={handleOpen} className="adicionar" color="green" type="primary">Adicionar <PlusOutlined /></button>
-            <ModalForm change={props.change} primaryAction={'Criar'} secondaryAction={'Cancelar'} open={open} setOpen={ o => setOpen(o)}></ModalForm>
+            <ModalForm userId={props.userId} change={props.change} primaryAction={'Criar'} secondaryAction={'Cancelar'} open={open} setOpen={ o => setOpen(o)}></ModalForm>
             </div>
     )
 }

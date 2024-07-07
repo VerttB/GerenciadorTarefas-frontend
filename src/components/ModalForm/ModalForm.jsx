@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Form, Input } from 'antd';
 const { TextArea } = Input;
 
-function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", des = "", change }) {
+function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", des = "", change, userId }) {
   const dataAtual = new Date();
   const dataFormatada = `${dataAtual.getFullYear()}-${dataAtual.getMonth() + 1}-${dataAtual.getDate()}`
   const [titulo, setTitulo] = useState(tit);
@@ -21,10 +21,12 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
 
   const handleCreate = () => {
     change({
-      "nome": titulo,
+      "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
       "data": data,
+      "corFundo":' #5C2FC2',
+      "userId": userId
 
     });
   }
