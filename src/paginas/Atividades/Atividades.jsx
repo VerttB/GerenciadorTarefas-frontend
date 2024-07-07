@@ -29,13 +29,13 @@ function Atividades({user}){
         );
       };
 
-      const fetchData = useCallback(() => {
+      const fetchDataGet = useCallback(() => {
         if (Object.keys(user).length !== 0) {
             console.log("fetch")
-          fetch('/src/assets/jsonsdeteste/tasks.json')
+          fetch(`http://localhost:8080/api/${user.userId}/atividades`)
             .then((response) => response.json())
             .then((data) => {
-              setTasks(data.filter(d => d.userId === user.userId));
+              setTasks(data);
             })
             .catch((error) => {
               console.error(error);
@@ -48,16 +48,16 @@ function Atividades({user}){
     
     
     useEffect(() => {
-        fetchData(); // Executar imediatamente ao montar o componente
-      }, [fetchData]);
+        fetchDataGet(); // Executar imediatamente ao montar o componente
+      }, [fetchDataGet]);
 
 
-
+      console.log(tasks)
     return(
         <main className="atividades-page">
             <CriarTask change={t => setTasks( ta => [...ta, t])}></CriarTask>
             <section className='taskItems'>
-                {tasks.map((t,i) => <TaskCard key={t.nome} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
+                {tasks.map((t,i) => <TaskCard key={t} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
             </section>
         </main>
     )
