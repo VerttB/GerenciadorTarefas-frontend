@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Form, Input } from 'antd';
 const { TextArea } = Input;
 
@@ -10,6 +10,11 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   const [data,setData] = useState(dataFormatada)
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    form.setFieldValue('titulo','');
+    form.setFieldValue('descricao','');
+  },[setOpen]);
 
   const handleTitulo = (e) => {
     setTitulo(e.target.value);

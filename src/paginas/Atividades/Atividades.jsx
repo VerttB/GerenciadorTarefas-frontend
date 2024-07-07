@@ -4,9 +4,6 @@ import './Atividades.scss';
 import { Navigate,redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback  } from "react";
 
-
-
-
 function Atividades({user}){
 
     const [tasks, setTasks] = useState([]);
