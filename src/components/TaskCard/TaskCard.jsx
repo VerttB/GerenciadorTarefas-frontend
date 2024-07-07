@@ -10,7 +10,7 @@ function TaskCard({task, change, index, deleteTask, userId}){
                 <h4>{task.titulo}</h4>
                 <div className="funcoes">
                 <EditCard userId={userId} task={task} index={index} updateTask={change}></EditCard>
-                <DeleteCard deleteTask={deleteTask} index={index}></DeleteCard>
+                <DeleteCard deleteTask={deleteTask} deletedTask={task} index={index}></DeleteCard>
                 </div>
                 </div>
 

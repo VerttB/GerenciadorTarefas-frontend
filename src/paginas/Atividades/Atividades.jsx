@@ -42,10 +42,16 @@ function Atividades({user}){
         sendDataBack(tarefaAtualizada,rota, metodo)
       };
 
-      const deleteTask = (index) => {
+      const deleteTask = (index, deletedTask) => {
         setTasks(prevTasks =>
           prevTasks.filter((_, i) => i !== index)
         );
+
+        console.log(deletedTask)
+        const rota = `http://localhost:8080/api/${user.userId}/atividades/${deletedTask.tarefaId}/remover_task`
+        const metodo = "DELETE"
+        sendDataBack(deletedTask,rota,metodo)
+
         
       };
 
