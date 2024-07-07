@@ -1,4 +1,16 @@
-
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
 .delete-button{
-    
+    @include mixnins.bg-bd-mg-pd-bdR(transparent, none,auto,auto);
+    @include mixnins.ff-fs-fw($fs: 18px);
+    color: gray;
+    transition: 0.2s ease-in;
+    position: relative;
+    left: 255px;
+    bottom: px;
+    &:hover{
+        cursor: pointer;
+        color: red;
+
+    }
 }

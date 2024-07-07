@@ -17,6 +17,13 @@
             align-items: center;
             @include mixnins.flex-center($gap: 10px, $just: none);
             background-color: aqua;
+            h4{
+                display: inline-block;
+            }
+            .funcoes{
+                display: flex;
+            }
+            
         }
         .card-descricao{
             display: flex;

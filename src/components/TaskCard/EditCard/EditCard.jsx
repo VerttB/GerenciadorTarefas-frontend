@@ -1,6 +1,7 @@
 import { EditOutlined } from '@ant-design/icons';
 import ModalForm from 'src/components/ModalForm/ModalForm';
 import React, { useState } from "react";
+import './EditCard.scss'
 
 function EditCard({ task, updateTask, index }) {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ function EditCard({ task, updateTask, index }) {
 
   return (
     <div className="task-botoes">
-      <button onClick={handleOpen}><EditOutlined /></button>
+      <button className='editar' onClick={handleOpen}><EditOutlined /></button>
       <ModalForm
         primaryAction={'Salvar'}
         secondaryAction={'Cancelar'}
