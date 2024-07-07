@@ -1,7 +1,7 @@
 
 @use 'src/assets/styles/variaveis.scss';
 @use 'src/assets/styles/mixnins.scss';
-
+@use 'src/assets/styles/breakpoint.scss';
     .card-conteiner{
         cursor: pointer;
         @include mixnins.setHW($w: 400px);
@@ -10,8 +10,14 @@
         &:hover{
             transform:scale(1.007)
         }
+
+        @include breakpoint.breakpoint(computador, max){
+            @include mixnins.setHW(160px, 240px);
+            
+        }
+
         .card-header{
-            @include mixnins.setHW(50px);
+            @include mixnins.setHW(30%);
             @include mixnins.bg-bd-mg-pd-bdR($bd: transparent,$bdR:10px 10px 0 0, $pd: 10px 20px);
             display: flex;
             align-items: center;

@@ -5,7 +5,7 @@
     @include mixnins.ff-fs-fw($fs: 18px);
     color: gray;
     transition: 0.2s ease-in;
-    position: relative;
+    // position: relative;
     left: 255px;
     bottom: px;
     &:hover{
