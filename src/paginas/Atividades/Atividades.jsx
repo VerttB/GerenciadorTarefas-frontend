@@ -37,7 +37,7 @@ function Atividades({user}){
         );
         console.log(updatedTask)
         const tarefaAtualizada =  {...updatedTask, user: { userId: user.userId }};
-        const rota = `http://localhost:8080/api/${user.userId}/atividades/${updatedTask.tarefaId}/editar_task`;
+        const rota = `http://localhost:8080/GerenciadorTarefas/${user.userId}/atividades/${updatedTask.tarefaId}/editar_task`;
         const metodo = 'PUT'
         sendDataBack(tarefaAtualizada,rota, metodo)
       };
@@ -48,7 +48,7 @@ function Atividades({user}){
         );
 
         console.log(deletedTask)
-        const rota = `http://localhost:8080/api/${user.userId}/atividades/${deletedTask.tarefaId}/remover_task`
+        const rota = `http://localhost:8080/GerenciadorTarefas/${user.userId}/atividades/${deletedTask.tarefaId}/remover_task`
         const metodo = "DELETE"
         sendDataBack(deletedTask,rota,metodo)
 
@@ -58,7 +58,7 @@ function Atividades({user}){
       const fetchDataGet = useCallback(() => {
         if (Object.keys(user).length !== 0) {
             console.log("fetch")
-          fetch(`http://localhost:8080/api/${user.userId}/atividades`)
+          fetch(`http://localhost:8080/GerenciadorTarefas/${user.userId}/atividades`)
             .then((response) => response.json())
             .then((data) => {
               setTasks(data);
@@ -77,7 +77,7 @@ function Atividades({user}){
         console.log(novaTask);
         setTasks(t => [...t, novaTask])
         const newTaskData = {...novaTask, user : { userId: user.userId}};
-        const rota =`http://localhost:8080/api/${user.userId}/atividades/criar_task`;
+        const rota =`http://localhost:8080/GerenciadorTarefas/${user.userId}/atividades/criar_task`;
         const metodo = "POST"
         console.log(rota)
         sendDataBack(newTaskData, rota,metodo);

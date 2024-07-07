@@ -16,12 +16,13 @@ function TaskCard({task, change, index, deleteTask, userId}){
 
                 <div className='card-descricao'>
                     <p>{task.descricao}</p>
-                    <p>{task.dataCriacao}</p>
+                    <p>{task.dataCriacao} --- {task.dataFinal}</p>
 
                     <div className='card-status'>
                     <p>{task.status}</p>
                     <div style={{backgroundColor: task.status === 'Em andamento' ? 'orange' :
-                                                   task.status === 'Concluida' ? 'green' : 'red'
+                                                   task.status === 'Concluída' ? 'green' :
+                                                   task.status === 'Pendente' ? 'blue' : 'red'
                           }} className='bola'></div>
 
                     </div>
