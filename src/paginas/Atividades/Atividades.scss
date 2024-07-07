@@ -20,7 +20,7 @@
         overflow-x: hidden;
         @include mixnins.bg-bd-mg-pd-bdR(transparent, none, $pd: 10px);
         @include breakpoint.breakpoint(computador,max){
-            gap: 4px;
+            gap: 10px;
             @include mixnins.setHW(80%,80%);
         }
         @include breakpoint.breakpoint(tablet, max){

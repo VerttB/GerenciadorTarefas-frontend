@@ -16,7 +16,7 @@ function TaskCard({task, change, index, deleteTask, userId}){
 
                 <div className='card-descricao'>
                     <p>{task.descricao}</p>
-                    <p>{task.data}</p>
+                    <p>{task.dataCriacao}</p>
 
                     <div className='card-status'>
                     <p>{task.status}</p>

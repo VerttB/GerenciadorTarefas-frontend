@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
-import { Modal, Form, Input } from 'antd';
+import { Modal, Form, Input, DatePicker } from 'antd';
 const { TextArea } = Input;
+const dateFormat = 'YYYY-MM-DD';
+const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY', 'DD-MM-YYYY', 'DD-MM-YY'];
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+dayjs.extend(customParseFormat);
+const customFormat = (value) => `custom format: ${value.format(dateFormat)}`;
+const customWeekStartEndFormat = (value) =>
+  `${dayjs(value).startOf('week').format(weekFormat)} ~ ${dayjs(value)
+    .endOf('week')
+    .format(weekFormat)}`;
 
 function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", des = "", change, userId }) {
-  const dataAtual = new Date();
-  const dataFormatada = `${dataAtual.getFullYear()}-${dataAtual.getMonth() + 1}-${dataAtual.getDate()}`
+
+
   const [titulo, setTitulo] = useState(tit);
   const [descricao, setDescricao] = useState(des);
-  const [data,setData] = useState(dataFormatada)
+  const [dataFinal, setDataFinal] = useState(dayjs().format(dateFormat))
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
 
@@ -19,22 +29,27 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
     setDescricao(e.target.value);
   };
 
+  const handleDataFinal = (date,dateString) => {
+    
+    setDataFinal(dateString);
+  }
+
   const handleCreate = () => {
     change({
       "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
-      "data": data,
       "corFundo":' #5C2FC2',
       "userId": userId,
-      "dataFinal": '2024-09-09'
+      "dataCriacao": '2024-01-01',
+      "dataFinal": dataFinal
 
     });
   }
 
   const handleUpdate = () => {
     change({
-      "nome": titulo,
+      "titulo": titulo,
       "descricao": descricao
     });
   }
@@ -82,7 +97,18 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
             message: "É necessário atribuir uma descrição a task"
           }]}
         >
-          <TextArea  name='descricao' onChange={handleDescricao}></TextArea>
+          <TextArea showCount maxLength={150}  name='descricao' onChange={handleDescricao}></TextArea>
+        </Form.Item>
+        <Form.Item
+          label='Prazo'
+          name='prazo'
+          initialValue={dayjs(dataFinal, dateFormat)}
+          rules={[{
+            required: true,
+            message: "É necessário atribuir um prazo a tarefa"
+          }]}
+        >
+          <DatePicker onChange={handleDataFinal} format={dateFormat}></DatePicker>
         </Form.Item>
       </Form>
     </Modal>
