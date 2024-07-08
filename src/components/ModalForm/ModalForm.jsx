@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Form, Input, DatePicker } from 'antd';
 const { TextArea } = Input;
 const dateFormat = 'YYYY-MM-DD';
@@ -22,11 +22,6 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
 
-  useEffect(() => {
-    form.setFieldValue('titulo','');
-    form.setFieldValue('descricao','');
-  },[setOpen]);
-
   const handleTitulo = (e) => {
     setTitulo(e.target.value);
   };
@@ -45,7 +40,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
-      "corFundo":'#81ACF0',
+      "corFundo":' #81ACF0',
       "userId": userId,
       "dataCriacao": '2024-01-01',
       "dataFinal": dataFinal
@@ -122,9 +117,6 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
           }]}
         >
           <DatePicker onChange={handleDataFinal} format={dateFormat}></DatePicker>
-
-          <TextArea  name='descricao' onChange={handleDescricao}></TextArea>
-        
 
         </Form.Item>
       </Form>
