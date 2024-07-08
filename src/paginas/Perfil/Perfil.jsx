@@ -37,7 +37,7 @@ function Perfil({ user, setUser }) {
             },
             body: JSON.stringify({ userId: user.userId }),
         })
-        .then(response => console.log(JSON.stringify(response)))
+        .then(response => {console.log(JSON.stringify(response)); setUser({})})
         .catch(err => console.error(err));
     }
 
