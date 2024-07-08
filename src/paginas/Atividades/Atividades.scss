@@ -9,6 +9,7 @@
     align-items: center;
 
     .taskItems{
+       
         padding: 10px;
         display: grid;
         grid-template-columns: repeat(4,25%);
@@ -19,9 +20,18 @@
         overflow-y: scroll;
         overflow-x: hidden;
         @include mixnins.bg-bd-mg-pd-bdR(transparent, none, $pd: 10px);
+        -webkit-box-shadow: -2px 2px 7px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 2px 7px 0px rgba(0,0,0,0.75);
+        box-shadow: -2px 2px 7px 0px rgba(0,0,0,0.75);
+        margin-top: 30px;
         @include breakpoint.breakpoint(computador,max){
-            gap: 4px;
+            gap: 10px;
+            @include mixnins.setHW(80%,85%);
+        }
+        @include breakpoint.breakpoint(tablet, max){
+            grid-template-columns: repeat(2,25%);
             @include mixnins.setHW(80%,80%);
+            gap: 100px;
         }
     }
 }

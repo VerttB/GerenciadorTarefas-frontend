@@ -7,7 +7,7 @@ import './forms.scss';
 
 
 
-function Forms(){
+function Forms({setUser}){
     const local = useLocation();
     console.log(local.pathname === '/login' ? false : true);
     const [disable, setDisable] = useState(false);
@@ -22,6 +22,7 @@ function Forms(){
         setDisable( () => !disable);
     }
 
+    
 
    
     useEffect(()=>{
@@ -51,8 +52,8 @@ function Forms(){
                 <h4>{descricao}</h4>
                 <button>{titulo}</button>
             </div>
-                <Login email={email} changeEmail={setEmail} senha={senha} changeSenha={setSenha} disable={disable}></Login>
-                <Cadastro  email={email} changeEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
+                <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
+                <Cadastro setUser={setUser}  email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
         </div>
         
     )

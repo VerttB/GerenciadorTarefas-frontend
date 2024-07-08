@@ -9,7 +9,7 @@
     height: 100vh;
     @include breakpoint.breakpoint(computador, max){
         margin: 20px 0;
-        height: 10px;
+        height: 100vh;
     }
     #slideForm{
         display: none
