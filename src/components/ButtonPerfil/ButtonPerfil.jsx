@@ -1,9 +1,9 @@
 import { Button } from "antd";
 
 
-function ButtonPerfil({user, valor, tipo, funcao}){
+function ButtonPerfil({ valor, tipo, funcao}){
     return(
-    <Button onClick={() => funcao(user)}  type={tipo} >{valor}</Button>
+    <Button onClick={funcao}  type={tipo} >{valor}</Button>
     )
 }
 

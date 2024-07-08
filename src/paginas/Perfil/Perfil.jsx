@@ -10,10 +10,16 @@ function Perfil({user}){
     const [userInfo, setUserInfo] = useState(); 
 
    
-    const deletarPerfil = (user, ) => {
-        fetch(`http://localhost:8080/GerenciadorTarefas/${userId}/conta`,{method: 'DELETE'})
+    const deletarPerfil = () => {
+        fetch(`http://localhost:8080/GerenciadorTarefas/${user.userId}/apagar_conta`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId: user.userId }),
+        })
         .then(response => console.log(JSON.stringify(response)))
-        .catch(err => console.err(err));
+        .catch(err => console.error(err));
     }
 
     return(
@@ -23,7 +29,7 @@ function Perfil({user}){
         <InputPerfil prefix={MailOutlined} valor={user.email} texto={"Email do Perfil"}></InputPerfil>
         <Space size={"large"} align="center" direction="horizontal">
         <ButtonPerfil  valor={"Modificar"} tipo={"primary"}></ButtonPerfil>
-        <ButtonPerfil user={user}  valor={'Deletar Perfil'} tipo={"dashed"}></ButtonPerfil>
+        <ButtonPerfil funcao={deletarPerfil}   valor={'Deletar Perfil'} tipo={"dashed"}></ButtonPerfil>
         </Space>
         </Space>
     </main>
