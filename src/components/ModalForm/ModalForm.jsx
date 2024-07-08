@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+
 import { Modal, Form, Input, DatePicker } from 'antd';
 const { TextArea } = Input;
 const dateFormat = 'YYYY-MM-DD';
@@ -21,6 +22,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   const [dataFinal, setDataFinal] = useState(dayjs().format(dateFormat))
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
+  
 
   const handleTitulo = (e) => {
     setTitulo(e.target.value);
@@ -34,6 +36,10 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
     
     setDataFinal(dateString);
   }
+
+  useEffect(() => {
+    form.resetFields();
+  }, [setOpen]);
 
   const handleCreate = () => {
     change({
@@ -56,13 +62,14 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   }
 
   const handleSave = () => {
-    form.validateFields().then(() => {
+    
       setConfirmLoading(true);
       setTimeout(() => {
         setConfirmLoading(false);
         if(tit === "") handleCreate(); else handleUpdate();
         handleClose();
       }, 1000);
+
     });
   };
 

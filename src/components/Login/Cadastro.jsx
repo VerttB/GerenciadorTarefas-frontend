@@ -2,11 +2,11 @@ import {MailOutlined,LinkedinFilled,FacebookFilled,GoogleOutlined,LockOutlined ,
 import { Input, Space, Button, Form } from 'antd';
 import './login.scss'
 import { DisableForm } from "../Forms/Forms";
+import { useEffect, useState } from 'react';
 
 function Cadastro(props){
-
   return(
-    <div className="formAreaBlock cadastro" disabled="true">
+    <div id="div-cadastro" className="formAreaBlock cadastro" disabled="true">
       <h2>Sign Up</h2>
         <div className='formIcons'>
           <GoogleOutlined className='googleIcon'/>
@@ -15,7 +15,7 @@ function Cadastro(props){
       </div>
     
 
-    <Form name='formCadastro' disabled={props.disable}>
+    <Form id='formCadastro' name='formCadastro' disabled={props.disable}>
 
       <Form.Item name="Nome" validateTrigger="onBlur" 
       rules={[{
@@ -40,9 +40,6 @@ function Cadastro(props){
      </Form.Item>
       </Form>
       
-  
-      
-   
     </div>
   )
 }

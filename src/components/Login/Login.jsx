@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MailOutlined, LockOutlined, GoogleOutlined, FacebookFilled, LinkedinFilled } from '@ant-design/icons';
 import { Input, Button, Form } from 'antd';
 import './login.scss';
@@ -41,6 +41,10 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
     .catch((error) => console.error('Erro:', error));
   };
 
+  useEffect( ()=> {
+    form.resetFields();
+  }, [disable]);
+
   const handleSubmit = (values) => {
     const usuario = {
       email: values.Email,
@@ -52,7 +56,7 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
   };
 
   return (
-    <div className="formAreaBlock">
+    <div id="div-login" className="formAreaBlock">
       <h2>Login</h2>
       <div className='formIcons'>
         <GoogleOutlined className='googleIcon' />
@@ -61,6 +65,7 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
       </div>
 
       <Form
+        id='formLogin'
         onFinish={handleSubmit}
         disabled={!disable}
         className='formLogin'
