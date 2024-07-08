@@ -7,58 +7,64 @@
     align-items: center;
     margin: 20px 0 0 0;
     height: 100vh;
-    display: flex;
-
     @include breakpoint.breakpoint(computador, max){
         margin: 20px 0;
         height: 100vh;
     }
-    #slideForm{
-        display: none
-    }
-    #slideDiv{
-        font-family: Arial, Helvetica, sans-serif;;
-        color: variaveis.$cor-texto;
-        @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-primaria,transparent,0, auto, 10px);
-        @include breakpoint.breakpoint(computador, max){
-            left: 11%;
-            height:600px;
+    .conteudo {
+        width: fit-content;
+        display: flex;
+        border-radius: 10px;
+        box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.54);
+        
+        #slideForm{
+            display: none
         }
-        left: 26%;
-        height:800px;
-        width: 625px;
-        @include mixnins.flex-column-center(20px);
-        align-items: center;
-        z-index: 1;
-        position: absolute;
-        transition: 0.75s ease-in-out;
+        #slideDiv{
+            font-family: Arial, Helvetica, sans-serif;
+            color: variaveis.$cor-texto;
+            @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-primaria,transparent,0, auto, 10px);
+            @include breakpoint.breakpoint(computador, max){
+                left: 11%;
+                height:600px;
+            }
+            left: 26%;
+            height:800px;
+            width: 625px;
+            @include mixnins.flex-column-center(20px);
+            align-items: center;
+            z-index: 1;
+            position: absolute;
+            transition: 0.75s ease-in-out;
 
-        .titulo-slideDiv{
-            font-size: 3rem;
+            .titulo-slideDiv{
+                font-size: 3rem;
+            }
+            .descricao-slideDiv{
+                font-size: 1.0rem;
+                
+            }
+            .pagina-slideDiv{
+                font-size: 1.5rem;
+                background-color: variaveis.$cor-primaria ;
+                padding: 15px 40px;
+                border-radius:50px 50px 50px 50px;
+                border: 1px solid variaveis.$cor-secundaria;
+                color: variaveis.$cor-texto;
+                &:hover{
+                    background-color: variaveis.$cor-secundaria;
+                }
+            }
         }
-        .descricao-slideDiv{
-            font-size: 1.0rem;
+
+        .slider{
+        transform: translateX(95%);
+        @include breakpoint.breakpoint(computador, max){
+            transform: translateX(95%);
+        }
             
         }
-        .pagina-slideDiv{
-            background-color: variaveis.$cor-primaria ;
-            padding: 15px 40px;
-            border-radius:50px 50px 50px 50px;
-            border: 1px solid variaveis.$cor-secundaria;
-            // &:{
-            //     background-color: red;
-            // }
-        }
     }
-
-   .slider{
-    transform: translateX(95%);
-    @include breakpoint.breakpoint(computador, max){
-        transform: translateX(95%);
-    }
-        
-    }
-
 }
 
 

@@ -17,7 +17,9 @@ function Forms({setUser}){
     const [nome, setNome] = useState("");
     const [senha, setSenha] = useState("");
 
-    function handleDisable(){
+    function handleClick(){
+        const btn = document.getElementById('btn-slider');
+        btn.
         setDisable(() => !disable);
     }
    
@@ -38,18 +40,18 @@ function Forms({setUser}){
     }, [disable])
 
     
-
     return(
-    
         <div className='formGeral'>
-            <input value={disable} type='checkbox' id='slideForm'></input>
-            <span id="slideDiv" onClick={() => handleDisable()}>
-                <h1 className="titulo-slideDiv">Bem vindo de volta!</h1>
-                <h4 className="descricao-slideDiv">{descricao}</h4>
-                <h3 className="pagina-slideDiv">{titulo}</h3>
-            </span>
-            <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
-            <Cadastro setUser={setUser}  email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
+            <section className="conteudo">
+                <input value={disable} type='checkbox' id='slideForm'></input>
+                <div id="slideDiv">
+                    <h1 className="titulo-slideDiv">Bem vindo de volta!</h1>
+                    <h4 className="descricao-slideDiv">{descricao}</h4>
+                    <button id="btn-slider" className="pagina-slideDiv" onClick={() => handleClick()}>{titulo}</button>
+                </div>
+                <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
+                <Cadastro setUser={setUser}  email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
+            </section>
         </div>
         
     )
