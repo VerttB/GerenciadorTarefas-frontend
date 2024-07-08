@@ -3,14 +3,17 @@ import CriarTask from "src/components/TaskCard/CriarTask";
 import './Atividades.scss';
 import { Navigate,redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback  } from "react";
-
-
-
+import { Input } from "antd";
 
 function Atividades({user}){
 
     const [tasks, setTasks] = useState([]);
+    const [nomeAprocurar, setNomeAprocurar] = useState("");
     const navigate = useNavigate();
+
+    const handleNomeAprocurar = (e) =>{
+      setNomeAprocurar(prevNome => e.target.value);
+    }
 
     function sendDataBack(tarefa, rota, metodo){
       fetch(rota, {
@@ -31,7 +34,7 @@ function Atividades({user}){
         setTasks(prevTasks =>
           prevTasks.map((task,i) =>
             i === index
-              ? { ...task, titulo: updatedTask.titulo, descricao: updatedTask.descricao, dataFinal: '2024-09-09'}
+              ? { ...task, titulo: updatedTask.titulo, descricao: updatedTask.descricao, dataFinal: updatedTask.dataFinal }
               : task
           )
         );
@@ -82,7 +85,7 @@ function Atividades({user}){
         console.log(rota)
         sendDataBack(newTaskData, rota,metodo);
      
-    
+        setTimeout(fetchDataGet, 50)
         
       }
     
@@ -93,14 +96,15 @@ function Atividades({user}){
         fetchDataGet(); // Executar imediatamente ao montar o componente
       }, [fetchDataGet]);
 
-
-      console.log(tasks)
-      console.log("Usuario", user.userId)
     return(
         <main className="atividades-page">
-            <CriarTask userId={user.userId} change={t => criarTask(t)}></CriarTask>
+            <div className="page-functions">
+            <Input onChange={handleNomeAprocurar} value={nomeAprocurar} className='input' size='large' placeholder="Insira o Nome da Task"></Input>
+
+            </div>
             <section className='taskItems'>
                 {tasks.map((t,i) => <TaskCard  key={t.tarefaId} userId={user.userId} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
+                <CriarTask userId={user.userId} change={t => criarTask(t)}></CriarTask>
             </section>
         </main>
     )
