@@ -25,7 +25,7 @@ function App(){
         <Route path='/login' element={<Forms setUser={setUser} login={true}></Forms>}/>
         <Route path='/atividades' element={<Atividades user={user} ></Atividades>}/>
         <Route path='/sobre' element={<Sobre></Sobre>}/>
-        <Route path='/perfil' element={<Perfil user={user}></Perfil>}/>
+        <Route path='/perfil' element={<Perfil user={user} setUser={setUser}></Perfil>}/>
         <Route path="*" element={<Navigate to="/inicio" />} />
      </Routes>
      <Footer></Footer>
