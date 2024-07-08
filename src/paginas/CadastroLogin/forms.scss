@@ -24,10 +24,10 @@
             font-family: Arial, Helvetica, sans-serif;
             color: variaveis.$cor-texto;
             @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-primaria,transparent,0, auto, 10px);
-            // @include breakpoint.breakpoint(computador, max){
-            //     left: 11%;
-            //     height:600px;
-            // }
+            @include breakpoint.breakpoint(computador, max){
+                left: 11%;
+                height:600px;
+            }
             height:800px;
             width: 625px;
             @include mixnins.flex-column-center(20px);
@@ -57,9 +57,9 @@
 
         .slider{
         transform: translateX(92%);
-        // @include breakpoint.breakpoint(computador, max){
-        //     transform: translateX(95%);
-        // }
+        @include breakpoint.breakpoint(computador, max){
+            transform: translateX(92%);
+        }
         }
     }
 }
