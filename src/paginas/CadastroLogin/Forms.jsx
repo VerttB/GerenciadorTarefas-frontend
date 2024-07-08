@@ -27,9 +27,7 @@ function Forms({setUser}){
         if(disable === true){
             div.classList.add("slider");
             setTitulo("Cadastrar");
-            setDescricao("Ainda não possui conta? Clique aqui para criar");
-
-            
+            setDescricao("Ainda não possui conta? Clique aqui para criar");     
         }
         else{
             div.classList.remove("slider");
