@@ -1,5 +1,5 @@
 import TaskCard from "src/components/TaskCard/TaskCard";
-import CriarTask from "src/components/TaskCard/CriarTask";
+import CriarTask from "src/components/TaskCard/CriarTask/CriarTask";
 import './Atividades.scss';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback } from "react";
@@ -23,7 +23,7 @@ function Atividades({ user }) {
     })
       .then((response) => response.json())
       .then(data => setTasks(data))
-      .catch((error) => console.error());
+      .catch((error) => console.error(error));
   }
 
   function sendDataBack(tarefa, rota, metodo) {
@@ -37,7 +37,7 @@ function Atividades({ user }) {
     })
       .then((response) => response.json())
       .then(data => console.log('Resposta:', data))
-      .catch((error) => console.error());
+      .catch((error) => console.error(error));
   }
 
   const updateTask = (updatedTask, index) => {
@@ -101,7 +101,7 @@ function Atividades({ user }) {
   const procurarNome = () => {
     const rota = `http://localhost:8080/GerenciadorTarefas/${user.userId}/atividades/pesquisarTarefa_${nomeAprocurar}`;
     const metodo = "GET"
-    getDataBack(nomeAprocurar, rota, metodo);
+    getDataBack(rota, metodo);
   }
 
 

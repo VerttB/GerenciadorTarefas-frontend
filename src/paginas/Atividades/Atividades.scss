@@ -8,6 +8,11 @@
     flex-direction: column;
     align-items: center;
 
+    @include breakpoint.breakpoint(computador, max) {
+        gap: 10px;
+        @include mixnins.setHW(100vh, 100%);
+    }
+
     .taskItems {
         padding: 10px;
         display: grid;
@@ -26,7 +31,7 @@
 
         @include breakpoint.breakpoint(computador, max) {
             gap: 10px;
-            @include mixnins.setHW(80%, 85%);
+            @include mixnins.setHW(80%, 90%);
         }
 
         @include breakpoint.breakpoint(tablet, max) {
@@ -40,9 +45,11 @@
             @include mixnins.setHW(80%, 70%);
             padding-left: 25px;
             align-items: center;
-
             gap: 20px;
+        }
 
+        @include breakpoint.breakpoint(wide, max){
+            @include mixnins.setHW(80%, 90%);
         }
     }
 
