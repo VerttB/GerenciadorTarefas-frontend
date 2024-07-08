@@ -7,6 +7,7 @@ import {  Modal, Form, Input } from "antd";
 import './forms.scss';
 
 function Forms({setUser}){
+
     const local = useLocation();
     console.log(local.pathname === '/login' ? false : true);
     const [disable, setDisable] = useState(false);
@@ -31,6 +32,7 @@ function Forms({setUser}){
 
         leftLogin = divLogin.left + 'px';
         leftCadastro = divCadastro.left + 'px';
+        
 
         div.style.left = leftLogin;
     });
@@ -61,7 +63,7 @@ function Forms({setUser}){
                     <button id="btn-slider" className="pagina-slideDiv" onClick={() => handleClick()}>{titulo}</button>
                 </div>
                 <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
-                <Cadastro setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} nome={nome} changeNome={n => setNome(n)} disable={disable}></Cadastro>
+                <Cadastro setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} nome={nome} setNome={n => setNome(n)} disable={disable}></Cadastro>
             </section>
         </div>
         
