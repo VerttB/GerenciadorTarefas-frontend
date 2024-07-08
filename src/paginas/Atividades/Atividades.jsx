@@ -3,7 +3,8 @@ import CriarTask from "src/components/TaskCard/CriarTask";
 import './Atividades.scss';
 import { Navigate,redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback  } from "react";
-import { Input } from "antd";
+import { Input, Space } from "antd";
+import { SearchOutlined } from '@ant-design/icons';
 
 function Atividades({user}){
 
@@ -99,9 +100,11 @@ function Atividades({user}){
     return(
         <main className="atividades-page">
             <div className="page-functions">
+              <Space dir="horizontal">
             <Input onChange={handleNomeAprocurar} value={nomeAprocurar} className='input' size='large' placeholder="Insira o Nome da Task"></Input>
-
-            </div>
+             <button><SearchOutlined></SearchOutlined></button>
+             </Space>
+                </div>
             <section className='taskItems'>
                 {tasks.map((t,i) => <TaskCard  key={t.tarefaId} userId={user.userId} task={t} index={i} change={updateTask} deleteTask={deleteTask}></TaskCard>)}
                 <CriarTask userId={user.userId} change={t => criarTask(t)}></CriarTask>

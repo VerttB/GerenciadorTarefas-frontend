@@ -1,9 +1,9 @@
 import { Button } from "antd";
 
 
-function ButtonPerfil({valor, tipo, icone}){
+function ButtonPerfil({ valor, tipo, funcao}){
     return(
-    <Button icon={icone} type={tipo} >{valor}</Button>
+    <Button onClick={funcao}  type={tipo} >{valor}</Button>
     )
 }
 

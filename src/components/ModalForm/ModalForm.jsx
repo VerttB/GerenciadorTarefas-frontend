@@ -68,6 +68,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
         if(tit === "") handleCreate(); else handleUpdate();
         handleClose();
       }, 1000);
+
     });
   };
 
