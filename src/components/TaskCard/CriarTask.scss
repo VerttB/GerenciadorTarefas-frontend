@@ -1,19 +1,36 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
 .task-botoes{
     width: 100%;
     display: flex;
-
     .adicionar{
-        background-color: #06D001;
+        background-color: #a7b1a7;
         padding: 8px;
         border-radius: 8px;
         color: white;
         font-weight: 700;
         cursor: pointer;
         border: transparent;
+        transition: 0.2s ease-in-out;
+        @include mixnins.setHW($w: 400px);
+        @include breakpoint.breakpoint(computador, max){
+            @include mixnins.setHW(150px,241px );
+
+        }
+        @include breakpoint.breakpoint(tablet, max){
+
+        }
+
+
 
         &:hover{
-            background-color: lighten(#06D001, $amount: 20);
+            background-color: darken(#a7b1a7, $amount: 20);
+            transform: scale(1.02)
+
         }
+        
     }
 
 }
