@@ -82,7 +82,7 @@ function Atividades({user}){
         console.log(rota)
         sendDataBack(newTaskData, rota,metodo);
      
-    
+        setTimeout(fetchDataGet, 50)
         
       }
     

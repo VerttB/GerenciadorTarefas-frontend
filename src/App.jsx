@@ -11,7 +11,7 @@ function App(){
 
 
 
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({ /*userId: 1*/ })
         
 
     return(
