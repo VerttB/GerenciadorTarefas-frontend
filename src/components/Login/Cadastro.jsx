@@ -36,6 +36,7 @@ function Cadastro({ setUser,nome, setNome, email, setEmail, senha, setSenha, dis
     })
     .then((response) => response.json())
     .then(data => {
+      console.log(usuario);
       console.log('data')
       setUser(data);
     })
