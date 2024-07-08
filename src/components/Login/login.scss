@@ -43,11 +43,14 @@
         }
         
     }
-
+    
     Input{
         width: 350px;
         height: 40px;
-
+    }
+    
+    .ant-input-affix-wrapper{
+        box-shadow: inset 0 0 2px black;
     }
 }
 
