@@ -5,7 +5,7 @@ import { UserOutlined, MailOutlined } from '@ant-design/icons';
 import './Perfil.scss';
 import { useState } from "react";
 
-function Perfil({ user }) {
+function Perfil({ user, setUser }) {
     const [nome, setNome] = useState(user.nome);
     const [senha, setSenha] = useState(user.senha);
     const [email, setEmail] = useState(user.email);
@@ -24,6 +24,7 @@ function Perfil({ user }) {
             setNome(data.nome);
             setSenha(data.senha);
             setEmail(data.email);
+            setUser({nome, senha, email});
         })
         .catch(err => console.error(err));
     }
