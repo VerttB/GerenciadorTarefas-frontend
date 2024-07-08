@@ -1,12 +1,12 @@
 
 import './header.scss'
 import { Link } from 'react-router-dom';
-
-function Header(){
+import { UserOutlined } from '@ant-design/icons';
+function Header({user}){
 
     return(
         <>
-        <header>
+        <header> 
             <div className="header_empresa_info">
                 <Link className='link' to='/inicio'>
                         <p>🧻</p>
@@ -20,9 +20,11 @@ function Header(){
                     <li><Link id='signIn' to='/login'>Sign In</Link></li>
                     <li><Link id='sobre' to="/sobre">Sobre</Link></li>
                     <li><Link id='atividades' to='/atividades'>Atividades</Link></li>
+                    {Object.keys(user).length !== 0 ? <li><Link id='perfil' to={'/perfil'}><UserOutlined></UserOutlined>
+                                                    </Link></li> : ''}
                 </ul>
-                <input type="checkbox" id="slideTema" />
-                <label htmlFor="slideTema" id="temaLabel"></label>
+                {/* <input type="checkbox" id="slideTema" />
+                <label htmlFor="slideTema" id="temaLabel"></label> */}
                 </div>
         </header>
     </>

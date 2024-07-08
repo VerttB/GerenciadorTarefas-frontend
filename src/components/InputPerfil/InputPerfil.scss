@@ -1,0 +1,13 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+
+div{
+    .label{
+        @include mixnins.ff-fs-fw(700, 24px)
+    }
+    .Input{
+        width: 250px;
+        background-color: aquamarine;
+        color: aqua;
+    }
+}

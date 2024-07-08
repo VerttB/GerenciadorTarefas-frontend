@@ -1,7 +1,9 @@
 
+import ConcluirTask from "./ConcluirTask/ConcluirTask";
 import DeleteCard from "./DeleteCard/DeleteCard";
 import EditCard from "./EditCard/EditCard";
 import "./TaskCard.scss";
+
 function TaskCard({task, change, index, deleteTask, userId}){
 
     return(
@@ -11,6 +13,7 @@ function TaskCard({task, change, index, deleteTask, userId}){
                 <div className="funcoes">
                 <EditCard userId={userId} task={task} index={index} updateTask={change}></EditCard>
                 <DeleteCard deleteTask={deleteTask} deletedTask={task} index={index}></DeleteCard>
+                <ConcluirTask task={task} updateTask={change}></ConcluirTask>
                 </div>
                 </div>
 
