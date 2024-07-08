@@ -17,15 +17,30 @@ function Forms({setUser}){
     const [nome, setNome] = useState("");
     const [senha, setSenha] = useState("");
 
+    let leftLogin;
+    let leftCadastro;
+
     function handleClick(){
-        const btn = document.getElementById('btn-slider');
         setDisable(() => !disable);
     }
-   
+
     useEffect(()=>{
         const div = document.getElementById("slideDiv");
+        const divLogin = document.getElementById("div-login").getBoundingClientRect();
+        const divCadastro = document.getElementById("div-cadastro").getBoundingClientRect();
+
+        leftLogin = divLogin.left + 'px';
+        leftCadastro = divCadastro.left + 'px';
+
+        div.style.left = leftLogin;
+    });
+
+    useEffect(()=>{
+        const div = document.getElementById("slideDiv");
+
         if(disable === true){
             div.classList.add("slider");
+            div.style.left = leftCadastro;
             setTitulo("Cadastrar");
             setDescricao("Ainda não possui conta? Clique aqui para criar");     
         }
@@ -34,9 +49,8 @@ function Forms({setUser}){
             setTitulo("Login");
             setDescricao("Já possuí conta? Realize o login");
         } 
-    }, [disable])
+    }, [disable]);
 
-    
     return(
         <div className='formGeral'>
             <section className="conteudo">
@@ -47,7 +61,7 @@ function Forms({setUser}){
                     <button id="btn-slider" className="pagina-slideDiv" onClick={() => handleClick()}>{titulo}</button>
                 </div>
                 <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
-                <Cadastro setUser={setUser}  email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
+                <Cadastro setUser={setUser} email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
             </section>
         </div>
         
