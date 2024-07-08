@@ -5,10 +5,58 @@
 
 .main-container {
     height: 100vh;
-    background-image: url('src/assets/images/background.svg');
+    // background-image: url('src/assets/images/background.svg');
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 10rem;
+    .img{
+        position: relative;
+        align-self: center;
+        width: 100%;
+        height: 25%;
+       
+    }
+    .img-container{
+        display: flex;    
+        flex-direction: row;
+        align-items: center;
+        gap: 900px;
+    }
+    h1{
+        color: black;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translatex(-50%);
+        
+    }
+
+    .lado1{
+        width: 800px;
+        height: 450px;
+        position: absolute;
+        z-index: 1;
+        left: 25%;
+        bottom: 40%;
+        box-sizing: border-box  ;
+        box-shadow: 12px 120px 200px #FEF5EC;
+
+    }
+    .lado2{
+        width: 400px;
+        height: 600px;
+        z-index: 1;
+        position: relative;
+        top: 25%;
+        box-sizing: border-box  ;
+        box-shadow: 12px 120px 200px #FEF5EC;
+    }
+
+    .lado3{
+        @extend .lado2;
+
+    }
 }

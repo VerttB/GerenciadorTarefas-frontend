@@ -3,11 +3,13 @@ import './inicio.scss';
 function Inicio(){
     return( 
         <main className="main-container">
-            <div>
-                <img src="src/assets/images/lado1.png" className='img-1'></img>
-                <img src="src/assets/images/lado2.png" className='img-2'></img>
-                <img src="src/assets/images/lado3.png" className='img-3'></img>
+            <div className='img-container'>
+                <img className='lado1' src="src/assets/images/lado1.png" ></img>
+                <img className='lado2' src="src/assets/images/lado3.png"></img> 
+                <h1 className="titulo1">Gerencie suas tarefas</h1>  
+                <img className='lado3' src="src/assets/images/lado2.png"></img>
             </div>
+
         </main>
     )
 }
