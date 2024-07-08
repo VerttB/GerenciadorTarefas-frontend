@@ -1,10 +1,14 @@
-
+import './inicio.scss';
 
 function Inicio(){
     return( 
-        <h1>As rotas tão feitas, da pra só clicar nos links do header agora :)
-            Mas ainda falta mudar umas coisas
-        </h1>
+        <main className="main-container">
+            <div>
+                <img src="src/assets/images/lado1.png" className='img-1'></img>
+                <img src="src/assets/images/lado2.png" className='img-2'></img>
+                <img src="src/assets/images/lado3.png" className='img-3'></img>
+            </div>
+        </main>
     )
 }
 

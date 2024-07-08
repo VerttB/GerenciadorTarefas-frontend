@@ -12,6 +12,7 @@ Currently, two official plugins are available:
 npm install vite
 npm install antd
 npm install scss
+npm install react-bootstrap-carousel
 ~~~
 # Da pra instalar tudo só usando o  comando:
 ~~~javascript
