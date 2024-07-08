@@ -39,7 +39,11 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
+<<<<<<< HEAD
       "corFundo":' #81ACF0',
+=======
+      "corFundo":'#81ACF0',
+>>>>>>> d8eca45568d690a61dd7ac92e8f5e957b6d05022
       "userId": userId,
       "dataCriacao": '2024-01-01',
       "dataFinal": dataFinal
