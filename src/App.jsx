@@ -12,7 +12,7 @@ function App(){
 
 
 
-    const [user, setUser] = useState({ userId: 4, nome: "Cainan", email: 'cainan.bas@gmail.com'})
+    const [user, setUser] = useState({ userId: 4, nome: "Cainan", email: 'cainan.bas@gmail.com', senha : '123'})
 
         
 
