@@ -38,8 +38,6 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
     .then((response) => response.json())
     .then(data => {
       setUser(data)
-      const navigateT = useNavigate();
-      setTimeout(navigateT('/atividades'), 50);
     })
     .catch((error) => console.error('Erro:', error));
   };
