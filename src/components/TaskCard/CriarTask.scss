@@ -19,9 +19,9 @@
             @include mixnins.setHW(150px,241px );
 
         }
-        @include breakpoint.breakpoint(tablet, max){
-
-        }
+        @include breakpoint.breakpoint(celular, max){
+            @include mixnins.setHW(150px, 100%)
+    }
 
 
 

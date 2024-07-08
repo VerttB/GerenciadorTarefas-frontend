@@ -1,6 +1,8 @@
 
 @use 'src/assets/styles/variaveis.scss';
 @use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
 
 header{
  
@@ -10,13 +12,22 @@ header{
     @include mixnins.flex-center($just : space-between);
     @include mixnins.setHW(60px, 100%);
 
+        @include breakpoint.breakpoint(celular,max){
+            padding-left:20px ;
+            gap: 12px;
+    }
+
     .header_empresa_info{
         align-items: center;
         text-align: left;
         gap: 12px;
         margin: 0 15px;
         @include mixnins.ff-fs-fw(fantasy, 24px, 600);
-
+        @include breakpoint.breakpoint(celular, max){
+            @include mixnins.ff-fs-fw($fs: 12px);
+            gap: 0px;
+            margin: 0;
+    }
         .link{
             text-decoration: none;
             display: inline-flex;
@@ -27,23 +38,32 @@ header{
     .header_extras{
         @include mixnins.flex-center(24px, space-evenly);
         margin-right: 60px;
+        @include breakpoint.breakpoint(celular, max){
+            gap: 0px;
+            
+    }
     ul{
         @include mixnins.flex-center($just: space-around);
         
-
-    
         li{
             list-style: none;
             align-items: center;
             @include mixnins.setHW($w: 120px);
             text-align: center;
 
+            @include breakpoint.breakpoint(celular, max){
+                @include mixnins.setHW($w: 60px)
+        }
+
             a{
                 color: variaveis.$cor-texto;
                 height: 30px;
                 text-decoration: none;
                 @include mixnins.ff-fs-fw(Arial, 20px, 600);
-            }
+                @include breakpoint.breakpoint(celular, max){
+                    @include mixnins.ff-fs-fw(Arial, 12px, 600);
+                }
+                }
 
             #signIn{
                 @include mixnins.bg-bd-mg-pd-bdR(none,1px solid variaveis.$cor-secundaria,auto,4px 6px,8px);
