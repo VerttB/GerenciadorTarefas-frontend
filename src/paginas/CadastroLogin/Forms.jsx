@@ -18,29 +18,28 @@ function Forms({setUser}){
     const [senha, setSenha] = useState("");
 
     let leftLogin;
-    let leftCadastro;
-
+    
     function handleClick(){
+        const btn = document.getElementById('btn-slider');
         setDisable(() => !disable);
     }
 
     useEffect(()=>{
         const div = document.getElementById("slideDiv");
         const divLogin = document.getElementById("div-login").getBoundingClientRect();
-        const divCadastro = document.getElementById("div-cadastro").getBoundingClientRect();
-
         leftLogin = divLogin.left + 'px';
-        leftCadastro = divCadastro.left + 'px';
-
         div.style.left = leftLogin;
-    });
+    },[]);
 
     useEffect(()=>{
         const div = document.getElementById("slideDiv");
+        const divLogin = document.getElementById("div-login").getBoundingClientRect();
 
+        leftLogin = divLogin.left + 'px';
+        div.style.left = leftLogin;
+        
         if(disable === true){
             div.classList.add("slider");
-            div.style.left = leftCadastro;
             setTitulo("Cadastrar");
             setDescricao("Ainda não possui conta? Clique aqui para criar");     
         }
@@ -49,8 +48,9 @@ function Forms({setUser}){
             setTitulo("Login");
             setDescricao("Já possuí conta? Realize o login");
         } 
-    }, [disable]);
+    }, [disable])
 
+    
     return(
         <div className='formGeral'>
             <section className="conteudo">
