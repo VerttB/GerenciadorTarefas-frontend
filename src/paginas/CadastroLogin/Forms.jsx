@@ -65,7 +65,7 @@ function Forms({setUser}){
                     <button id="btn-slider" className="pagina-slideDiv" onClick={() => handleClick()}>{titulo}</button>
                 </div>
                 <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
-                <Cadastro setUser={setUser} email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
+                <Cadastro setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} nome={nome} changeNome={n => setNome(n)} disable={disable}></Cadastro>
             </section>
         </div>
         

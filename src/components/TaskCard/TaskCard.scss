@@ -2,7 +2,7 @@
 @use 'src/assets/styles/variaveis.scss';
 @use 'src/assets/styles/mixnins.scss';
 @use 'src/assets/styles/breakpoint.scss';
-    .card-conteiner{
+.card-conteiner{
         cursor: pointer;
         @include mixnins.setHW($w: 400px);
         transition: 0.2s ease-in-out;
@@ -12,9 +12,14 @@
         }
 
         @include breakpoint.breakpoint(computador, max){
-            @include mixnins.setHW(160px, 240px);
-            
+            @include mixnins.setHW(140px, 200px);
         }
+       
+        @include breakpoint.breakpoint(wide, max){
+            @include mixnins.setHW(160px, 250px);
+        }
+
+        
 
         .card-header{
             @include mixnins.setHW(30%);

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,  } from 'react';
+import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined, GoogleOutlined, FacebookFilled, LinkedinFilled } from '@ant-design/icons';
 import { Input, Button, Form } from 'antd';
 import './login.scss';
@@ -6,7 +7,7 @@ import './login.scss';
 const SubmitButton = ({ form, children }) => {
   const [submittable, setSubmittable] = useState(false);
   const values = Form.useWatch([], form);
-
+ 
   React.useEffect(() => {
     form
       .validateFields({
@@ -37,6 +38,8 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
     .then((response) => response.json())
     .then(data => {
       setUser(data)
+      const navigateT = useNavigate();
+      setTimeout(navigateT('/atividades'), 50);
     })
     .catch((error) => console.error('Erro:', error));
   };
