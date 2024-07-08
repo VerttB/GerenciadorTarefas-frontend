@@ -19,7 +19,6 @@ function Forms({setUser}){
 
     function handleClick(){
         const btn = document.getElementById('btn-slider');
-        btn.
         setDisable(() => !disable);
     }
    

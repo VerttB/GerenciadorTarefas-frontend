@@ -48,7 +48,6 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "userId": userId,
       "dataCriacao": '2024-01-01',
       "dataFinal": dataFinal
-
     });
   }
 
