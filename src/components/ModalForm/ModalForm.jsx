@@ -45,7 +45,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
-      "corFundo":'#81ACF0'
+      "corFundo":'#81ACF0',
       "userId": userId,
       "dataCriacao": '2024-01-01',
       "dataFinal": dataFinal
