@@ -7,6 +7,8 @@
     align-items: center;
     margin: 20px 0 0 0;
     height: 100vh;
+    display: flex;
+
     @include breakpoint.breakpoint(computador, max){
         margin: 20px 0;
         height: 100vh;
@@ -15,11 +17,12 @@
         display: none
     }
     #slideDiv{
-        @include mixnins.bg-bd-mg-pd-bdR(black,transparent,0, auto, 10px);
+        font-family: Arial, Helvetica, sans-serif;;
+        color: variaveis.$cor-texto;
+        @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-primaria,transparent,0, auto, 10px);
         @include breakpoint.breakpoint(computador, max){
             left: 11%;
             height:600px;
-            width: 525px;
         }
         left: 26%;
         height:800px;
@@ -30,6 +33,22 @@
         position: absolute;
         transition: 0.75s ease-in-out;
 
+        .titulo-slideDiv{
+            font-size: 3rem;
+        }
+        .descricao-slideDiv{
+            font-size: 1.0rem;
+            
+        }
+        .pagina-slideDiv{
+            background-color: variaveis.$cor-primaria ;
+            padding: 15px 40px;
+            border-radius:50px 50px 50px 50px;
+            border: 1px solid variaveis.$cor-secundaria;
+            // &:{
+            //     background-color: red;
+            // }
+        }
     }
 
    .slider{

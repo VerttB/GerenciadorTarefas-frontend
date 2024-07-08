@@ -2,10 +2,9 @@ import Login from "src/components/Login/Login";
 import Cadastro from "src/components/Login/Cadastro";
 import {redirect, Link, useLocation} from 'react-router-dom'
 import React, { useState, createContext, useEffect } from "react";
+import {  Modal, Form, Input } from "antd";
 
 import './forms.scss';
-
-
 
 function Forms({setUser}){
     const local = useLocation();
@@ -19,11 +18,8 @@ function Forms({setUser}){
     const [senha, setSenha] = useState("");
 
     function handleDisable(){
-        setDisable( () => !disable);
+        setDisable(() => !disable);
     }
-
-    
-
    
     useEffect(()=>{
         const div = document.getElementById("slideDiv");
@@ -31,29 +27,29 @@ function Forms({setUser}){
             div.classList.add("slider");
             setTitulo("Cadastrar");
             setDescricao("Ainda não possui conta? Clique aqui para criar");
+
+            
         }
         else{
             div.classList.remove("slider");
             setTitulo("Login");
             setDescricao("Já possuí conta? Realize o login");
-        }
-
-        
+        } 
     }, [disable])
 
     
 
     return(
     
-        <div className='formGeral' >
+        <div className='formGeral'>
             <input value={disable} type='checkbox' id='slideForm'></input>
-            <div id="slideDiv" onClick={() => handleDisable()}>
-                <h3>{titulo}</h3>
-                <h4>{descricao}</h4>
-                <button>{titulo}</button>
-            </div>
-                <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
-                <Cadastro setUser={setUser}  email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
+            <span id="slideDiv" onClick={() => handleDisable()}>
+                <h1 className="titulo-slideDiv">Bem vindo de volta!</h1>
+                <h4 className="descricao-slideDiv">{descricao}</h4>
+                <h3 className="pagina-slideDiv">{titulo}</h3>
+            </span>
+            <Login setUser={setUser} email={email} setEmail={e => setEmail(e)} senha={senha} setSenha={s => setSenha(s)} disable={disable}></Login>
+            <Cadastro setUser={setUser}  email={email} setEmail={setEmail} senha={senha} changeSenha={setSenha} nome={nome} changeNome={setNome} disable={disable}></Cadastro>
         </div>
         
     )
