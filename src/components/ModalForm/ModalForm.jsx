@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Modal, Form, Input, DatePicker } from 'antd';
 const { TextArea } = Input;
@@ -21,6 +22,11 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
 
+  useEffect(() => {
+    form.setFieldValue('titulo','');
+    form.setFieldValue('descricao','');
+  },[setOpen]);
+
   const handleTitulo = (e) => {
     setTitulo(e.target.value);
   };
@@ -39,11 +45,9 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
-<<<<<<< HEAD
+
       "corFundo":' #81ACF0',
-=======
-      "corFundo":'#81ACF0',
->>>>>>> d8eca45568d690a61dd7ac92e8f5e957b6d05022
+
       "userId": userId,
       "dataCriacao": '2024-01-01',
       "dataFinal": dataFinal
@@ -59,14 +63,17 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   }
 
   const handleSave = () => {
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setConfirmLoading(false);
-      if(tit === "") handleCreate(); else handleUpdate();
-    }, 2000);
+    form.validateFields().then(() => {
+      setConfirmLoading(true);
+      setTimeout(() => {
+        setConfirmLoading(false);
+        if(tit === "") handleCreate(); else handleUpdate();
+        handleClose();
+      }, 1000);
+    });
   };
 
-  const handleCancel = () => {
+  const handleClose = () => {
     setOpen(false);
   };
 
@@ -78,8 +85,9 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       open={open}
       onOk={handleSave}
       confirmLoading={confirmLoading}
-      onCancel={handleCancel}
-    >
+      onCancel={handleClose}
+      >
+
       <Form form={form}>
         <Form.Item
           label='Titulo'
@@ -90,7 +98,9 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
             message: "É necessário atribuir um titulo a task"
           }]}
         >
-            <Input name='titulo' onChange={handleTitulo}></Input>
+        
+          <Input name='titulo' onChange={handleTitulo}></Input>
+        
         </Form.Item>
         <Form.Item
           label='Descrição'
@@ -101,6 +111,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
             message: "É necessário atribuir uma descrição a task"
           }]}
         >
+
           <TextArea showCount maxLength={150}  name='descricao' onChange={handleDescricao}></TextArea>
         </Form.Item>
         <Form.Item
@@ -113,6 +124,10 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
           }]}
         >
           <DatePicker onChange={handleDataFinal} format={dateFormat}></DatePicker>
+
+          <TextArea  name='descricao' onChange={handleDescricao}></TextArea>
+        
+
         </Form.Item>
       </Form>
     </Modal>

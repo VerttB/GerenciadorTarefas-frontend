@@ -5,9 +5,6 @@ import { Navigate,redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback  } from "react";
 import { Input } from "antd";
 
-
-
-
 function Atividades({user}){
 
     const [tasks, setTasks] = useState([]);
