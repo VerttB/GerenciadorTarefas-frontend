@@ -6,7 +6,7 @@ function Sobre() {
     const [colaboradores, setColaboradores] = useState([])
     
     useEffect(() => {
-        fetch("http://localhost:8080/api/sobre", {
+        fetch("http://localhost:8080/GerenciadorTarefas/sobre", {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
