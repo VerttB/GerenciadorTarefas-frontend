@@ -15,6 +15,7 @@
         border: transparent;
         transition: 0.2s ease-in-out;
         border-top-right-radius: 25%;
+        border-bottom-left-radius: 25%;
         
         @include mixnins.setHW($w: 400px);
         @include breakpoint.breakpoint(computador, max){

@@ -85,24 +85,27 @@ function Atividades({user}){
         const metodo = "POST"
         console.log(rota)
         sendDataBack(newTaskData, rota,metodo);
-     
         setTimeout(fetchDataGet, 50)
-        
+      }
+
+      const procurarNome =() => {
+        const rota = "http://localhost:8080/GerenciadorTarefas/";
+        const metodo = "POST"
       }
     
       
     
     
     useEffect(() => {
-        fetchDataGet(); // Executar imediatamente ao montar o componente
+        fetchDataGet(); 
       }, [fetchDataGet]);
 
     return(
         <main className="atividades-page">
             <div className="page-functions">
               <Space dir="horizontal">
-            <Input onChange={handleNomeAprocurar} value={nomeAprocurar} className='input' size='large' placeholder="Insira o Nome da Task"></Input>
-             <button><SearchOutlined></SearchOutlined></button>
+            <Input onChange={e => handleNomeAprocurar(e)} value={nomeAprocurar} className='input' size='large' placeholder="Insira o Nome da Task"></Input>
+             <button onClick={procurarNome}><SearchOutlined></SearchOutlined></button>
              </Space>
                 </div>
             <section className='taskItems'>
