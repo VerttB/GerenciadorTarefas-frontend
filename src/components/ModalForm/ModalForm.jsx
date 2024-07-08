@@ -61,14 +61,13 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   }
 
   const handleSave = () => {
-    
+    form.validateFields().then(()=>{
       setConfirmLoading(true);
       setTimeout(() => {
         setConfirmLoading(false);
         if(tit === "") handleCreate(); else handleUpdate();
         handleClose();
       }, 1000);
-
     });
   };
 
