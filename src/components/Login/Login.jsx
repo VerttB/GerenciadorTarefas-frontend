@@ -7,7 +7,7 @@ import './login.scss';
 const SubmitButton = ({ form, children }) => {
   const [submittable, setSubmittable] = useState(false);
   const values = Form.useWatch([], form);
-  const navigate = useNavigate();
+ 
   React.useEffect(() => {
     form
       .validateFields({
@@ -38,7 +38,8 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
     .then((response) => response.json())
     .then(data => {
       setUser(data)
-      setTimeout(navigate('/atividades'), 50);
+      const navigateT = useNavigate();
+      setTimeout(navigateT('/atividades'), 50);
     })
     .catch((error) => console.error('Erro:', error));
   };
