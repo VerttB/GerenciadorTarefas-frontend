@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-import { Modal, Form, Input, DatePicker } from 'antd';
+import { Modal, Form, Input, DatePicker, ColorPicker, Space } from 'antd';
 const { TextArea } = Input;
 const dateFormat = 'YYYY-MM-DD';
 const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY', 'DD-MM-YYYY', 'DD-MM-YY'];
@@ -14,12 +14,13 @@ const customWeekStartEndFormat = (value) =>
     .endOf('week')
     .format(weekFormat)}`;
 
-function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", des = "", change, userId }) {
+function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, tit = "", des = "", dFinal = dayjs().format(dateFormat), change, userId }) {
 
 
   const [titulo, setTitulo] = useState(tit);
   const [descricao, setDescricao] = useState(des);
-  const [dataFinal, setDataFinal] = useState(dayjs().format(dateFormat))
+  const [dataFinal, setDataFinal] = useState(dFinal);
+  const [cor, setCor] = useState('#81ACF0');
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
   
@@ -32,8 +33,11 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
     setDescricao(e.target.value);
   };
 
+  const handleCor = (e) => {
+    setCor(e.target.value)
+  }
+
   const handleDataFinal = (date,dateString) => {
-    
     setDataFinal(dateString);
   }
 
@@ -46,7 +50,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
       "titulo": titulo,
       "descricao": descricao,
       "status": "Pendente",
-      "corFundo":' #81ACF0',
+      "corFundo": cor,
       "userId": userId,
       "dataCriacao": '2024-01-01',
       "dataFinal": dataFinal
@@ -56,7 +60,8 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
   const handleUpdate = () => {
     change({
       "titulo": titulo,
-      "descricao": descricao
+      "descricao": descricao,
+      "dataFinal": dataFinal
     });
   }
 
@@ -80,14 +85,14 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
     <Modal
       okText={primaryAction}
       cancelText={secondaryAction}
-      title="Edit Task"
+      title={modalTitulo}
       open={open}
       onOk={handleSave}
       confirmLoading={confirmLoading}
       onCancel={handleClose}
       >
 
-      <Form form={form}>
+      <Form form={form} layout='vertical'>
         <Form.Item
           label='Titulo'
           name='titulo'
@@ -123,8 +128,21 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
           }]}
         >
           <DatePicker onChange={handleDataFinal} format={dateFormat}></DatePicker>
-
         </Form.Item>
+        <Form.Item
+          label='Cor'
+          name='Cor'
+          initialValue={cor}
+          rules={[{
+            required: false,
+          }]}
+        >
+
+          <ColorPicker onChangeComplete={handleCor} 
+          showText
+           ></ColorPicker>
+        </Form.Item>
+        
       </Form>
     </Modal>
   );
