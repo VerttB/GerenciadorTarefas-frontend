@@ -7,7 +7,7 @@ import "./TaskCard.scss"
 // import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 // import from '@awesome.me/kit-KIT_CODE/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck, faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -18,9 +18,10 @@ function TaskCard({task, change, index, deleteTask, userId}){
                 <div className='card-header' style={{backgroundColor: task.corFundo}}>
                 <h4>{task.titulo}</h4>
                 <div className="funcoes">
-                <EditCard userId={userId} task={task} index={index} updateTask={change}></EditCard>
-                <DeleteCard  deleteTask={deleteTask} deletedTask={task} index={index}></DeleteCard>
                 <ConcluirTask icone= {<FontAwesomeIcon icon={faCircleCheck} />} task={task} updateTask={change}></ConcluirTask>
+                <EditCard icone={<FontAwesomeIcon icon={faPenToSquare} />} userId={userId} task={task} index={index} updateTask={change}></EditCard>
+                <DeleteCard icone={<FontAwesomeIcon icon={faTrashCan} />}  deleteTask={deleteTask} deletedTask={task} index={index}></DeleteCard>
+                
                 </div>
                 </div>
 

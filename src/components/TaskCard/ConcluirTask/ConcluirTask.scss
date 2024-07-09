@@ -1,14 +1,11 @@
-button{
+.concluir{
     background-color: transparent;
     border: none;
 
-    .icone{
-        position: relative;
-        left: 100%;
+    
 
         &:hover{
             cursor: pointer;
-            color: green;
+                color: #12a310;
         }
     }
-}

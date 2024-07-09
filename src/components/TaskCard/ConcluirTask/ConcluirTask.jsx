@@ -5,7 +5,7 @@ function ConcluirTask({task, index, updateTask, icone}){
 
     
     return(
-       <button onClick={() => {task.status = "Concluída" ;updateTask(task, index)}}>{icone}</button> 
+       <button className="concluir" onClick={() => {task.status = "Concluída" ;updateTask(task, index)}}>{icone}</button> 
     )
 }
 

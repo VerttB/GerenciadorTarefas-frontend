@@ -3,7 +3,7 @@ import ModalForm from 'src/components/ModalForm/ModalForm';
 import React, { useState } from "react";
 import './EditCard.scss'
 
-function EditCard({ task, updateTask, index }) {
+function EditCard({ task, updateTask, index, icone }) {
   const [open, setOpen] = useState(false);
   const [updatedTask, setUpdatedTask] = useState({ ...task });
 
@@ -21,7 +21,7 @@ function EditCard({ task, updateTask, index }) {
   };
   return (
     <div className="task-botoes">
-      <button className='editar' onClick={handleOpen}><EditOutlined /></button>
+      <button className='editar' onClick={handleOpen}>{icone}</button>
       <ModalForm
         modalTitulo={"Editar Atividade"}
         primaryAction={'Salvar'}

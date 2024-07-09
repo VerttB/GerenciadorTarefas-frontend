@@ -5,5 +5,11 @@
     .editar{
         @include mixnins.bg-bd-mg-pd-bdR(transparent, none,auto,auto);
         @include mixnins.ff-fs-fw($fs: 16px);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        
     }
 }
