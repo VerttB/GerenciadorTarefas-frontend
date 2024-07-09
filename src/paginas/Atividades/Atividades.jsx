@@ -81,7 +81,7 @@ function Atividades({ user }) {
           console.error(error);
         });
     } else {
-      navigate('/cadastro');
+     // navigate('/cadastro');
     }
   }, [user, navigate]);
 

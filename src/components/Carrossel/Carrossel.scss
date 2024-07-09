@@ -4,7 +4,7 @@
 
 .carrossel{
     position: relative;
-    z-index: 1;
+    z-index: 2;
     h3{
         margin: 0;
         height: 240px;
@@ -35,7 +35,7 @@
   width: 70%;
 
    @include breakpoint.breakpoint(wide,max){
-    width: 70%;
+    width: 60%;
   }
   @include breakpoint.breakpoint(computador,max){
     width: 70%;
