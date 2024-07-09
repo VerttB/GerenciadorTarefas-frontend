@@ -115,7 +115,7 @@ function Atividades({ user }) {
     <main className="atividades-page">
       <div className="page-functions">
         <Space size={""} dir="horizontal">
-          <Input onChange={e => handleNomeAprocurar(e)} value={nomeAprocurar} className='input' size='large' placeholder="Insira o Nome da Task"></Input>
+          <Input onChange={e => handleNomeAprocurar(e)} value={nomeAprocurar} className='input' size='large' placeholder="Busque por alguma tarefa"></Input>
           <button className='procurar' onClick={procurarNome}><SearchOutlined></SearchOutlined></button>
         </Space>
       </div>

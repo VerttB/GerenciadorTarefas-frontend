@@ -80,7 +80,7 @@ function ModalForm({ open, setOpen, primaryAction, secondaryAction, tit = "", de
     <Modal
       okText={primaryAction}
       cancelText={secondaryAction}
-      title="Edit Task"
+      title="Edite sua tarefa:"
       open={open}
       onOk={handleSave}
       confirmLoading={confirmLoading}
