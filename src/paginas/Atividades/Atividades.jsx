@@ -5,7 +5,9 @@ import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback } from "react";
 import { Input, Space } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
-;
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSliders } from "@fortawesome/free-solid-svg-icons";
+
 
 function Atividades({ user }) {
 
@@ -116,6 +118,7 @@ function Atividades({ user }) {
     <main className="atividades-page">
       <div className="page-functions">
         <Space size={""} dir="horizontal">
+          <button><FontAwesomeIcon icon={faSliders}></FontAwesomeIcon></button>
           <Input onChange={e => handleNomeAprocurar(e)} value={nomeAprocurar} className='input' size='large' placeholder="Busque por alguma tarefa"></Input>
           <button className='procurar' onClick={procurarNome}><SearchOutlined></SearchOutlined></button>
         </Space>
