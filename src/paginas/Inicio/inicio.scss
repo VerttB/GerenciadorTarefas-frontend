@@ -64,6 +64,9 @@
       left: 86%;
       height: 70%;
       z-index: 0;
+      @include breakpoint.breakpoint(wide,max){
+         
+      }
       @include breakpoint.breakpoint(computador,max){
          top: 25%;
          left: 70%;

@@ -15,6 +15,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include breakpoint.breakpoint(wide,max){
+          height: 550px;
+          line-height: 550px;
+        }
         @include breakpoint.breakpoint(computador,max){
             height: 400px;
             line-height: 400px;
@@ -31,7 +35,7 @@
   width: 70%;
 
    @include breakpoint.breakpoint(wide,max){
-    width: 100%;
+    width: 70%;
   }
   @include breakpoint.breakpoint(computador,max){
     width: 70%;
