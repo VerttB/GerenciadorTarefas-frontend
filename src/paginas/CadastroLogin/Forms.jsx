@@ -7,6 +7,7 @@ import {  Modal, Form, Input } from "antd";
 import './forms.scss';
 
 function Forms({setUser}){
+
     const local = useLocation();
     console.log(local.pathname === '/login' ? false : true);
     const [disable, setDisable] = useState(false);
@@ -29,6 +30,8 @@ function Forms({setUser}){
         const div = document.getElementById("slideDiv");
         const divLogin = document.getElementById("div-login").getBoundingClientRect();
         leftLogin = divLogin.left + 'px';
+
+
         div.style.left = leftLogin;
        
     },[]);
