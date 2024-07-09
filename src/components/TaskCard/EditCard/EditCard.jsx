@@ -24,12 +24,14 @@ function EditCard({ task, updateTask, index }) {
     <div className="task-botoes">
       <button className='editar' onClick={handleOpen}><EditOutlined /></button>
       <ModalForm
+        modalTitulo={"Editar Atividade"}
         primaryAction={'Salvar'}
         secondaryAction={'Cancelar'}
         open={open}
         setOpen={setOpen}
-        tit={task.nome}
+        tit={task.titulo}
         des={task.descricao}
+        dFinal = {task.dataFinal}
         change={handleSave}
       />
     </div>
