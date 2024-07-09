@@ -16,7 +16,7 @@
         }
        
         @include breakpoint.breakpoint(wide, max){
-            @include mixnins.setHW(160px, 250px);
+            @include mixnins.setHW(160px, 300px);
         }
 
         

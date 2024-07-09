@@ -4,16 +4,23 @@
 footer{
     display: inline-flex;
     background-color: variaveis.$cor-primaria;
-    width: 100%;
-    height: 40px;
+    @include mixnins.setHW(40px, 100%);
     position: relative;
     bottom: 0;
     align-items: center;
+    color: white;
+    font-family: variaveis.$font-secundaria;
+    overflow: hidden;
 
     p {
         @include mixnins.ff-fs-fw(Arial, 16px, 500);
        &:first-child{
         margin: auto 10px
        }
+     
+    }
+    #ponto{
+        font-size: 24px;
+        margin: 0 10px;
     }
 }

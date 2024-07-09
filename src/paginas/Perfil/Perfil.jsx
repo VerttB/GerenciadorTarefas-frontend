@@ -11,7 +11,7 @@ function Perfil({ user, setUser }) {
     const [email, setEmail] = useState(user.email);
 
     const modificarPerfil = () => {
-        const userNovo = { nome: nome, senha: senha, email: email };
+        const userNovo = {userId: user.userId ,nome: nome, senha: senha, email: email };
         fetch(`http://localhost:8080/GerenciadorTarefas/${user.userId}/editar_conta`, {
             method: 'PUT',
             headers: {
@@ -37,7 +37,7 @@ function Perfil({ user, setUser }) {
             },
             body: JSON.stringify({ userId: user.userId }),
         })
-        .then(response => console.log(JSON.stringify(response)))
+        .then(response => {console.log(JSON.stringify(response)); setUser({})})
         .catch(err => console.error(err));
     }
 

@@ -1,0 +1,77 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
+
+.main-container {
+   @include mixnins.setHW(100vh);
+   background-color: #FCFFFF;
+   overflow: hidden;
+   position: relative;
+   .main-titulo{
+      position: relative;
+      z-index: 1;
+      margin: 10px;
+      
+      h2{
+         @include mixnins.ff-fs-fw(variaveis.$font-main,48px);
+
+         @include breakpoint.breakpoint(celular,max){
+            @include mixnins.ff-fs-fw(variaveis.$font-main,24px);
+
+
+         }
+         strong{
+            background-color: aqua;
+            font-family: variaveis.$font-main;
+         }
+        }
+   }
+
+   .main-texto{
+      position: relative;
+      z-index: 1;
+      margin: 5px 50px;
+      max-width: 60%;
+      min-width: 40%;
+      @include breakpoint.breakpoint(celular,max){
+        max-width: 80%;
+        margin: 10px 20px;
+      }
+      h3{
+         @include mixnins.ff-fs-fw(variaveis.$font-main,32px,500);
+         margin-bottom: 10px;
+         @include breakpoint.breakpoint(celular,max){
+            @include mixnins.ff-fs-fw(variaveis.$font-main,18px, 500);
+
+
+         }
+        }
+        p{
+         @include mixnins.ff-fs-fw(variaveis.$font-main,24px,400);
+         @include breakpoint.breakpoint(celular,max){
+            @include mixnins.ff-fs-fw(variaveis.$font-main,14px, 400);
+
+
+         }
+        }
+   }
+
+   .imagem-inicio{
+      position: absolute;
+      background-color: transparent;
+      top: 50%;
+      left: 86%;
+      height: 70%;
+      z-index: 0;
+      @include breakpoint.breakpoint(computador,max){
+         top: 25%;
+         left: 70%;
+         height: 100%;
+      }
+      @include breakpoint.breakpoint(celular,max){
+         top: 30%;
+         left: 50%;
+      }
+   }
+}

@@ -17,7 +17,6 @@ function Forms(){
     const [email, setEmail] = useState("");
     const [nome, setNome] = useState("");
     const [senha, setSenha] = useState("");
-    //let checker = disable;
 
     console.log('diz ai', disable);
 
