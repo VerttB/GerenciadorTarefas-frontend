@@ -33,8 +33,9 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
     setDescricao(e.target.value);
   };
 
-  const handleCor = (e) => {
-    setCor(e.target.value)
+  const handleCor = (color) => {
+    setCor(color.toHexString());
+   
   }
 
   const handleDataFinal = (date,dateString) => {
@@ -61,7 +62,8 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
     change({
       "titulo": titulo,
       "descricao": descricao,
-      "dataFinal": dataFinal
+      "dataFinal": dataFinal,
+      "corFundo": cor
     });
   }
 
@@ -118,7 +120,9 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
 
           <TextArea showCount maxLength={150}  name='descricao' onChange={handleDescricao}></TextArea>
         </Form.Item>
+        <Space direction='horizontal'>
         <Form.Item
+          layout='horizontal'
           label='Prazo'
           name='prazo'
           initialValue={dayjs(dataFinal, dateFormat)}
@@ -129,7 +133,9 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
         >
           <DatePicker onChange={handleDataFinal} format={dateFormat}></DatePicker>
         </Form.Item>
-        <Form.Item
+        </Space>
+        <Space size={'large'} direction='horizontal'>
+        <Form.Item layout='horizontal'
           label='Cor'
           name='Cor'
           initialValue={cor}
@@ -138,10 +144,11 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
           }]}
         >
 
-          <ColorPicker onChangeComplete={handleCor} 
+          <ColorPicker format='hex' value={cor} onChange={handleCor} 
           showText
            ></ColorPicker>
         </Form.Item>
+        </Space>
         
       </Form>
     </Modal>

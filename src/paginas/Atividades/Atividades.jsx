@@ -46,7 +46,7 @@ function Atividades({ user }) {
     setTasks(prevTasks =>
       prevTasks.map((task, i) =>
         i === index
-          ? { ...task, titulo: updatedTask.titulo, descricao: updatedTask.descricao, dataFinal: updatedTask.dataFinal }
+          ? { ...task, titulo: updatedTask.titulo, descricao: updatedTask.descricao, dataFinal: updatedTask.dataFinal, corFundo: updatedTask.corFundo }
           : task
       )
     );
