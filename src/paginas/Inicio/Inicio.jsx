@@ -1,15 +1,14 @@
 import './inicio.scss';
-
+import Carrossel from 'src/components/Carrossel/Carrossel';
 function Inicio(){
+    const imagem1 = 'src/assets/images/imagem1.png'
     return( 
         <main className="main-container">
-            <div className='img-container'>
-                <img className='lado1' src="src/assets/images/lado1.png" ></img>
-                <img className='lado2' src="src/assets/images/lado3.png"></img> 
-                <h1 className="titulo1">Gerencie suas tarefas</h1>  
-                <img className='lado3' src="src/assets/images/lado2.png"></img>
-            </div>
+            <Carrossel imagem1={imagem1}></Carrossel>
 
+            <h2>Bem-Vindo (a) ao <strong>Quick Tasks</strong>!!</h2>
+            <h3>O seu mais novo gerenciador de Tarefas</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque qui earum dolores aperiam molestias vitae culpa laudantium. Quaerat eius illum excepturi minus consectetur adipisci voluptatibus itaque, eaque dolorum nesciunt doloribus!</p>
         </main>
     )
 }
