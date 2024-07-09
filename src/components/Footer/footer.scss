@@ -1,6 +1,6 @@
 @use 'src/assets/styles/variaveis.scss';
 @use 'src/assets/styles/mixnins.scss';
-
+@use 'src/assets/styles/breakpoint.scss';
 footer{
     display: inline-flex;
     background-color: variaveis.$cor-primaria;
@@ -12,7 +12,13 @@ footer{
     font-family: variaveis.$font-secundaria;
     overflow: hidden;
     z-index: 2;
-
+    @include breakpoint.breakpoint(computador,max){
+        top: 100%;
+    }
+    @include breakpoint.breakpoint(celular,max){
+       top: 95%;
+    }
+   
     p {
         @include mixnins.ff-fs-fw(Arial, 16px, 500);
        &:first-child{

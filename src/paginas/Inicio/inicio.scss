@@ -9,8 +9,12 @@
    overflow: hidden;
    position: relative;
 
+   @include breakpoint.breakpoint(computador,max){
+      @include mixnins.setHW(95vh)
+   }
+
    @include breakpoint.breakpoint(celular,max){
-      @include mixnins.setHW(91vh)
+      @include mixnins.setHW(88vh)
    }
    .main-titulo{
       position: relative;
@@ -34,7 +38,7 @@
 
    .main-texto{
       position: relative;
-      z-index: 1;
+      z-index: 2;
       margin: 5px 50px;
       max-width: 60%;
       min-width: 40%;
@@ -79,9 +83,9 @@
          height: 100%;
       }
       @include breakpoint.breakpoint(celular,max){
-         top: 30%;
-         left: 10%;
-         display: none;
+         top: 36%;
+         left: 0%;
+        transform: rotate(20deg);
       }
    }
 
@@ -91,7 +95,7 @@
       z-index: 0;
 
       @include breakpoint.breakpoint(celular,max){
-         top: 75%;
+         top: 80%;
          height: 20%;
       }
    }
