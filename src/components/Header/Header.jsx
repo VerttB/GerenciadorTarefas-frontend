@@ -25,22 +25,22 @@ function Header({ user }) {
 
                 <div className='header_extras'>
                     <ul>
-                        <li><Link id='signUp' to='/cadastro'>Sign Up</Link></li>
+                    <li><Link className='link' id='sobre' to="/sobre">Sobre</Link></li>
+                        
 
                         {Object.keys(user).length !== 0 ?
                          <>
-                            <li><Link id='atividades' to='/atividades'>Atividades</Link></li>
-                            <li><Link id='perfil' to={'/perfil'}><UserOutlined></UserOutlined></Link></li>
+                            <li><Link className='link' id='atividades' to='/atividades'>Atividades</Link></li>
+                            <li><Link className='link'  id='perfil' to={'/perfil'}><UserOutlined></UserOutlined></Link></li>
                         </>
                             :
                             <>
-                                <li><Link id='signIn' to='/login'>Sign In</Link></li>
-                                <li><Link id='sobre' to="/sobre">Sobre</Link></li>
+                                <li><Link className='link' id='signIn' to='/login'>Sign In</Link></li>
+                                <li><Link className='link' id='signUp' to='/cadastro'>Sign Up</Link></li>
                             </>
                         }
                     </ul>
-                    {/* <input type="checkbox" id="slideTema" />
-                <label htmlFor="slideTema" id="temaLabel"></label> */}
+   
                 </div>
             </header>
         </>

@@ -4,59 +4,74 @@
 
 
 .main-container {
-    height: 100vh;
-    // background-image: url('src/assets/images/background.svg');
-    background-color: white;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    flex-direction: row;
-    gap: 10rem;
-    .img{
-        position: relative;
-        align-self: center;
-        width: 100%;
-        height: 25%;
-       
-    }
-    .img-container{
-        display: flex;    
-        flex-direction: row;
-        align-items: center;
-        gap: 900px;
-    }
-    h1{
-        color: black;
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        transform: translatex(-50%);
-        
-    }
+   @include mixnins.setHW(100vh);
+   background-color: #FCFFFF;
+   overflow: hidden;
+   position: relative;
+   .main-titulo{
+      position: relative;
+      z-index: 1;
+      margin: 10px;
+      
+      h2{
+         @include mixnins.ff-fs-fw(variaveis.$font-main,48px);
 
-    .lado1{
-        width: 800px;
-        height: 450px;
-        position: absolute;
-        z-index: 1;
-        left: 25%;
-        bottom: 40%;
-        box-sizing: border-box  ;
-        box-shadow: 12px 120px 200px #FEF5EC;
+         @include breakpoint.breakpoint(celular,max){
+            @include mixnins.ff-fs-fw(variaveis.$font-main,24px);
 
-    }
-    .lado2{
-        width: 400px;
-        height: 600px;
-        z-index: 1;
-        position: relative;
-        top: 25%;
-        box-sizing: border-box  ;
-        box-shadow: 12px 120px 200px #FEF5EC;
-    }
 
-    .lado3{
-        @extend .lado2;
+         }
+         strong{
+            background-color: aqua;
+            font-family: variaveis.$font-main;
+         }
+        }
+   }
 
-    }
+   .main-texto{
+      position: relative;
+      z-index: 1;
+      margin: 5px 50px;
+      max-width: 60%;
+      min-width: 40%;
+      @include breakpoint.breakpoint(celular,max){
+        max-width: 80%;
+        margin: 10px 20px;
+      }
+      h3{
+         @include mixnins.ff-fs-fw(variaveis.$font-main,32px,500);
+         margin-bottom: 10px;
+         @include breakpoint.breakpoint(celular,max){
+            @include mixnins.ff-fs-fw(variaveis.$font-main,18px, 500);
+
+
+         }
+        }
+        p{
+         @include mixnins.ff-fs-fw(variaveis.$font-main,24px,400);
+         @include breakpoint.breakpoint(celular,max){
+            @include mixnins.ff-fs-fw(variaveis.$font-main,14px, 400);
+
+
+         }
+        }
+   }
+
+   .imagem-inicio{
+      position: absolute;
+      background-color: transparent;
+      top: 50%;
+      left: 86%;
+      height: 70%;
+      z-index: 0;
+      @include breakpoint.breakpoint(computador,max){
+         top: 25%;
+         left: 70%;
+         height: 100%;
+      }
+      @include breakpoint.breakpoint(celular,max){
+         top: 30%;
+         left: 50%;
+      }
+   }
 }

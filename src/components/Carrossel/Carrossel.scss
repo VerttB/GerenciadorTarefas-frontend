@@ -1,0 +1,45 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
+.carrossel{
+    position: relative;
+    z-index: 1;
+    h3{
+        margin: 0;
+        height: 240px;
+        color: #fff;
+        line-height: 240px;
+        text-align: center;
+        background: rgb(15, 15, 15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint.breakpoint(computador,max){
+            height: 400px;
+            line-height: 400px;
+        }
+        @include breakpoint.breakpoint(celular,max){
+            height: 200px;
+            line-height: 200px;
+          }
+
+}
+.imagem{
+
+  height: 100%;
+  width: 70%;
+
+   @include breakpoint.breakpoint(wide,max){
+    width: 100%;
+  }
+  @include breakpoint.breakpoint(computador,max){
+    width: 70%;
+    height: 100%;
+  }
+  @include breakpoint.breakpoint(celular,max){
+    width: 100%;
+  }
+ 
+}
+}

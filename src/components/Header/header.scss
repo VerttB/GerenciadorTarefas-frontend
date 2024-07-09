@@ -5,10 +5,11 @@
 
 
 header{
- 
+    overflow: hidden;
     background-color: variaveis.$cor-primaria;
     color: variaveis.$cor-texto;
-    font-family: fantasy; 
+    font-family: variaveis.$font-main; 
+    font-weight: bolder;
     @include mixnins.flex-center($just : space-between);
     @include mixnins.setHW(60px, 100%);
 
@@ -22,16 +23,21 @@ header{
         text-align: left;
         gap: 12px;
         margin: 0 15px;
-        @include mixnins.ff-fs-fw(fantasy, 24px, 600);
+        @include mixnins.ff-fs-fw(variaveis.$font-main, 24px, 400);
         @include breakpoint.breakpoint(celular, max){
-            @include mixnins.ff-fs-fw($fs: 12px);
+            @include mixnins.ff-fs-fw(variaveis.$font-main,$fs: 12px);
             gap: 0px;
             margin: 0;
     }
         .link{
-            text-decoration: none;
-            display: inline-flex;
-            color: variaveis.$cor-texto;
+            p{
+                font-family: variaveis.$font-main;
+                text-decoration: none;
+                display: inline-flex;
+                color: variaveis.$cor-texto;
+                letter-spacing: 2px
+            }
+           
         }
     }
 
@@ -39,40 +45,40 @@ header{
         @include mixnins.flex-center(24px, space-evenly);
         margin-right: 60px;
         @include breakpoint.breakpoint(celular, max){
+            margin-right: 0px;
             gap: 0px;
             
     }
     ul{
         @include mixnins.flex-center($just: space-around);
-        
         li{
             list-style: none;
             align-items: center;
             @include mixnins.setHW($w: 120px);
             text-align: center;
-
             @include breakpoint.breakpoint(celular, max){
-                @include mixnins.setHW($w: 60px)
+                @include mixnins.setHW($w: 80px);
+                
         }
 
-            a{
+            .link{
+                letter-spacing: 1px;
                 color: variaveis.$cor-texto;
-                height: 30px;
                 text-decoration: none;
-                @include mixnins.ff-fs-fw(Arial, 20px, 600);
+                @include mixnins.ff-fs-fw(variaveis.$font-main, 20px, 400);
                 @include breakpoint.breakpoint(celular, max){
-                    @include mixnins.ff-fs-fw(Arial, 12px, 600);
+                    @include mixnins.ff-fs-fw(variaveis.$font-main, 12px, 400);
                 }
                 }
 
             #signIn{
-                @include mixnins.bg-bd-mg-pd-bdR(none,1px solid variaveis.$cor-secundaria,auto,4px 6px,8px);
+                @include mixnins.bg-bd-mg-pd-bdR(none,1px solid variaveis.$cor-secundaria,auto,4px 12px,8px);
                 &:hover{
                     background-color: lighten(variaveis.$cor-primaria, 20);
                 }
             }
             #signUp{
-                @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-secundaria,none,auto,4px 6px,8px);
+                @include mixnins.bg-bd-mg-pd-bdR(variaveis.$cor-secundaria,none,auto,4px 12px,8px);
                 &:hover{
                     background-color: darken(variaveis.$cor-secundaria, 40);
                 }
