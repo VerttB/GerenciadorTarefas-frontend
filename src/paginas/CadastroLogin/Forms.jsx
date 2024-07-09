@@ -47,13 +47,13 @@ function Forms({setUser}){
             div.classList.add("slider");
             setTitulo("Cadastrar");
             setDescricao("Ainda não possui conta? Clique aqui para criar");
-            setMsg("Seja bem vindo!");     
+            setMsg("Olá de novo!");      
         }
         else{
             div.classList.remove("slider");
             setTitulo("Login");
             setDescricao("Já possuí conta? Realize o login");
-            setMsg("Olá de novo!");     
+            setMsg("Seja bem vindo!");    
         } 
     }, [disable, window.location.pathname])
 

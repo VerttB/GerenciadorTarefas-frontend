@@ -6,8 +6,8 @@ import { UserOutlined } from '@ant-design/icons';
 function naoLogadoLinks() {
     return (
         <>
-            <li><Link id='signUp' to='/cadastro'>Sign Up</Link></li>
-            <li><Link id='signIn' to='/login'>Sign In</Link></li>
+            <li><Link id='signUp' to='/cadastro'>SIGN UP</Link></li>
+            <li><Link id='signIn' to='/login'>SIGN IN</Link></li>
         </>
     )
 }
@@ -35,8 +35,8 @@ function Header({ user }) {
                         </>
                             :
                             <>
-                                <li><Link className='link' id='signIn' to='/login'>Sign In</Link></li>
-                                <li><Link className='link' id='signUp' to='/cadastro'>Sign Up</Link></li>
+                                <li><Link className='link' id='signIn' to='/login'>SIGN IN</Link></li>
+                                <li><Link className='link' id='signUp' to='/cadastro'>SIGN UP</Link></li>
                             </>
                         }
                     </ul>
