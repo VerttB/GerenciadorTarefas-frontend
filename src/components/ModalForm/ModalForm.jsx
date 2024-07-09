@@ -14,13 +14,14 @@ const customWeekStartEndFormat = (value) =>
     .endOf('week')
     .format(weekFormat)}`;
 
-function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, tit = "", des = "", dFinal = dayjs().format(dateFormat), change, userId }) {
+function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, tit = "", des = "", dFinal = dayjs().format(dateFormat),loc = '', corTask = '#81ACF0', change, userId }) {
 
 
   const [titulo, setTitulo] = useState(tit);
   const [descricao, setDescricao] = useState(des);
   const [dataFinal, setDataFinal] = useState(dFinal);
-  const [cor, setCor] = useState('#81ACF0');
+  const [local, setLocal] = useState(loc);
+  const [cor, setCor] = useState(corTask);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
   
@@ -36,6 +37,9 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
   const handleCor = (color) => {
     setCor(color.toHexString());
    
+  }
+  const handleLocal = (e) => {
+    setLocal(e.target.value)
   }
 
   const handleDataFinal = (date,dateString) => {
@@ -54,7 +58,8 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
       "corFundo": cor,
       "userId": userId,
       "dataCriacao": '2024-01-01',
-      "dataFinal": dataFinal
+      "dataFinal": dataFinal,
+      "local": local
     });
   }
 
@@ -63,7 +68,8 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
       "titulo": titulo,
       "descricao": descricao,
       "dataFinal": dataFinal,
-      "corFundo": cor
+      "corFundo": cor,
+      "local": local
     });
   }
 
@@ -137,18 +143,27 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
         <Space size={'large'} direction='horizontal'>
         <Form.Item layout='horizontal'
           label='Cor'
-          name='Cor'
+          name='cor'
           initialValue={cor}
           rules={[{
             required: false,
           }]}
         >
-
-          <ColorPicker format='hex' value={cor} onChange={handleCor} 
+          <ColorPicker name='cor' format='hex'  onChange={(color) => handleCor(color)} 
           showText
            ></ColorPicker>
         </Form.Item>
         </Space>
+        <Form.Item layout='vertical'
+          label='Local'
+          name='local'
+          initialValue={local}
+          rules={[{
+            required: false,
+          }]}
+        >
+          <Input name='local' onChange={handleLocal}></Input>
+        </Form.Item>
         
       </Form>
     </Modal>

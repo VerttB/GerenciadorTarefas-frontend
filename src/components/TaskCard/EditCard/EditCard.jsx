@@ -19,7 +19,6 @@ function EditCard({ task, updateTask, index }) {
     updateTask(newTask, index);
     setOpen(false); // Fechar o modal após salvar
   };
-
   return (
     <div className="task-botoes">
       <button className='editar' onClick={handleOpen}><EditOutlined /></button>
@@ -32,6 +31,8 @@ function EditCard({ task, updateTask, index }) {
         tit={task.titulo}
         des={task.descricao}
         dFinal = {task.dataFinal}
+        loc = {task.loc}
+        corTask = {task.corFundo}
         change={handleSave}
       />
     </div>
