@@ -1,9 +1,44 @@
+@use 'src/assets/styles/variaveis.scss';
+@use 'src/assets/styles/mixnins.scss';
+@use 'src/assets/styles/breakpoint.scss';
+
 .perfil-conteiner{
-    height: 100vh;
+    height: 93vh;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint.breakpoint(celular,max){
+        @include mixnins.setHW(90vh)
+    }
     .perfil-dados{
         width: 100%;
+        position: relative;
         display: flex;
+        top: 10%;
         justify-content: center;
-        margin-top: 50px;
+       
+        
+    }
+
+    .perfil-decImage{
+        position: absolute;
+        top: 0%;
+        z-index: -1;
+        width: 75%;
+        left: -10%;
+    }
+
+    .perfil-decImage2{
+        position: absolute;
+        z-index: -1;
+        left: 33%;
+        bottom: 0;
+        width: 100%;
+        
+        @include breakpoint.breakpoint(celular,max){
+            left: 30%;
+            top: 70%;
+            width: 75%;
+        }
+      
     }
 }

@@ -59,6 +59,8 @@ function Perfil({ user, setUser }) {
     }
     return (
         <main className="perfil-conteiner">
+
+            
             <Space className="perfil-dados" size={"large"} align="center" direction="vertical">
                 <InputPerfil change={e => setNome(e.target.value)} prefix={UserOutlined} valor={nome} texto={"Nome do Perfil"} />
                 <InputPerfil change={e => setEmail(e.target.value)} prefix={MailOutlined} valor={email} texto={"Email do Perfil"} />
@@ -69,6 +71,9 @@ function Perfil({ user, setUser }) {
                     <ButtonPerfil funcao={deslogar} valor={'Deslogar'} ></ButtonPerfil>
                 </Space>
             </Space>
+            <img className="perfil-decImage" src="src/assets/images/15.png" alt="" />
+            <img className="perfil-decImage2" src="src/assets/images/14.png" alt="" />
+
         </main>
     );
 }

@@ -70,23 +70,24 @@
       position: absolute;
       background-color: transparent;
       top: 50%;
-      left: 86%;
-      height: 70%;
+      left: 70%;
+      height: 50%;
       z-index: 1;
       @include breakpoint.breakpoint(wide,max){
-         left: 70%;
+         left: 32%;
          top: 26%;
          height: 100%;
       }
       @include breakpoint.breakpoint(computador,max){
-         top: 25%;
-         left: 70%;
+         top: 22%;
+         left: 35%;
          height: 100%;
       }
       @include breakpoint.breakpoint(celular,max){
-         top: 36%;
-         left: 7%;
-         transform: rotate(20deg);
+         top: 10%;
+         left: -55%;
+         right: 0%;
+         transform: rotateX(-30deg);
          min-height: 50%;
          min-width: 50%;
       }
