@@ -5,7 +5,7 @@ import Forms from "./paginas/CadastroLogin/Forms"
 import Sobre from "./paginas/Sobre/Sobre"
 import Inicio from "./paginas/Inicio/Inicio"
 import Atividades from "./paginas/Atividades/Atividades"
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Perfil from "./paginas/Perfil/Perfil"
 
 function App(){
@@ -13,9 +13,15 @@ function App(){
 
 
     const [user, setUser] = useState({})
+    const [loading, setLoading] = useState(true)
 
+    useEffect(() => {
+        const usuarioSalvo = localStorage.getItem("user")
+        if(usuarioSalvo){ setUser(JSON.parse(usuarioSalvo))}
+        setLoading(false)
+    },[])
         
-
+    if(loading){ return <div>Carregando...</div>}
     return(
     <BrowserRouter>
     <Header user={user}></Header>

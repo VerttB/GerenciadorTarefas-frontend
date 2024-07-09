@@ -5,6 +5,7 @@ import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback } from "react";
 import { Input, Space } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
+;
 
 function Atividades({ user }) {
 

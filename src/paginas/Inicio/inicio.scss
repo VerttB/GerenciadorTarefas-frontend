@@ -4,10 +4,19 @@
 
 
 .main-container {
-   @include mixnins.setHW(100vh);
+   @include mixnins.setHW(92vh);
    background-color: #FCFFFF;
    overflow: hidden;
    position: relative;
+
+   @include breakpoint.breakpoint(computador,max){
+      @include mixnins.setHW(95vh)
+   }
+
+   @include breakpoint.breakpoint(celular,max){
+      @include mixnins.setHW(88vh);
+      
+   }
    .main-titulo{
       position: relative;
       z-index: 1;
@@ -30,7 +39,7 @@
 
    .main-texto{
       position: relative;
-      z-index: 1;
+      z-index: 2;
       margin: 5px 50px;
       max-width: 60%;
       min-width: 40%;
@@ -63,9 +72,11 @@
       top: 50%;
       left: 86%;
       height: 70%;
-      z-index: 0;
+      z-index: 1;
       @include breakpoint.breakpoint(wide,max){
-         
+         left: 70%;
+         top: 26%;
+         height: 100%;
       }
       @include breakpoint.breakpoint(computador,max){
          top: 25%;
@@ -73,8 +84,22 @@
          height: 100%;
       }
       @include breakpoint.breakpoint(celular,max){
-         top: 30%;
-         left: 50%;
+         top: 36%;
+         left: 7%;
+         transform: rotate(20deg);
+         min-height: 50%;
+         min-width: 50%;
+      }
+   }
+
+   .ondas-inicio{
+      position: absolute;
+      top: 60%;
+      z-index: 0;
+
+      @include breakpoint.breakpoint(celular,max){
+         top: 80%;
+         height: 20%;
       }
    }
 }
