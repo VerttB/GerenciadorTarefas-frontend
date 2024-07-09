@@ -48,6 +48,7 @@ function Login({ setUser, email, setEmail, senha, setSenha, disable }) {
     .then((response) => response.json())
     .then(data => {
       setUser(data)
+      localStorage.setItem('user', JSON.stringify(data));
       setTimeout(() => navegar(),50);
     })
     .catch((error) => console.error('Erro:', error));

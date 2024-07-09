@@ -4,11 +4,20 @@ import { Space } from "antd";
 import { UserOutlined, MailOutlined } from '@ant-design/icons';
 import './Perfil.scss';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
 function Perfil({ user, setUser }) {
     const [nome, setNome] = useState(user.nome);
     const [senha, setSenha] = useState(user.senha);
     const [email, setEmail] = useState(user.email);
+    const navigate = useNavigate();
+
+    const navegar = useCallback(() => {
+
+        navigate('/cadastro');
+      
+    }, [navigate]);
 
     const modificarPerfil = () => {
         const userNovo = {userId: user.userId ,nome: nome, senha: senha, email: email };
@@ -40,7 +49,14 @@ function Perfil({ user, setUser }) {
         .then(response => {console.log(JSON.stringify(response)); setUser({})})
         .catch(err => console.error(err));
     }
-
+    function deslogar(){
+        
+        
+        setUser({});
+        localStorage.removeItem('user');
+        setTimeout(navegar(), 50);
+        
+    }
     return (
         <main className="perfil-conteiner">
             <Space className="perfil-dados" size={"large"} align="center" direction="vertical">
@@ -50,6 +66,7 @@ function Perfil({ user, setUser }) {
                 <Space size={"large"} align="center" direction="horizontal">
                     <ButtonPerfil funcao={modificarPerfil} valor={"Modificar"} tipo={"primary"} />
                     <ButtonPerfil funcao={deletarPerfil} valor={'Deletar Perfil'} tipo={"dashed"} />
+                    <ButtonPerfil funcao={deslogar} valor={'Deslogar'} ></ButtonPerfil>
                 </Space>
             </Space>
         </main>
