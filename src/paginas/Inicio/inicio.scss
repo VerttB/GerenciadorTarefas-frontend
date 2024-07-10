@@ -19,7 +19,7 @@
    }
    .main-titulo{
       position: relative;
-      z-index: 1;
+      z-index: 2;
       margin: 10px;
       
       h2{
@@ -83,6 +83,14 @@
          left: 35%;
          height: 100%;
       }
+
+      @include breakpoint.breakpoint(tablet,max){
+         top: 50%;
+         left: -15%;
+         height: 100%;
+         transform: rotate(-20deg);
+         
+      }
       @include breakpoint.breakpoint(celular,max){
          top: 10%;
          left: -55%;
@@ -97,6 +105,12 @@
       position: absolute;
       top: 60%;
       z-index: 0;
+
+      @include breakpoint.breakpoint(tablet,max){
+         top: 50%;
+         left: 0%;
+         height: 100%;
+      }
 
       @include breakpoint.breakpoint(celular,max){
          top: 80%;

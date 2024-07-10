@@ -55,9 +55,14 @@
             p{
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 10px;   
+        }
+
+        .status{
+            display: inline-flex;
+            width: 40%;
             .olho{
-                width: 5%;
+                width: 15%;
                 display: inline-flex;
             }
         }

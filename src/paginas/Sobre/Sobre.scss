@@ -5,6 +5,9 @@
     height: 93vh;
     @include mixnins.flex-center();
     background-color: #faf4dc;
+    @include breakpoint.breakpoint(tablet,max){
+        @include mixnins.setHW(96vh)
+    }
     @include breakpoint.breakpoint(celular,max){
         @include mixnins.setHW(90vh)
     }

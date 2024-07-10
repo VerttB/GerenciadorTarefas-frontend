@@ -61,7 +61,7 @@ function Cadastro({ setUser,nome, setNome, email, setEmail, senha, setSenha, dis
         <LinkedinFilled className='linkedinIcon' />
       </div>
     
-      <Form form={form} onFinish={handleSubmit} name='formCadastro' layout='vertical' autoComplete='off'>
+      <Form form={form} disabled={disable} onFinish={handleSubmit} name='formCadastro' layout='vertical' autoComplete='off'>
         <Form.Item
           name="nome"
           initialValue={nome}

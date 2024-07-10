@@ -118,7 +118,6 @@ function Atividades({ user }) {
     <main className="atividades-page">
       <div className="page-functions">
         <Space size={""} dir="horizontal">
-          <button><FontAwesomeIcon icon={faSliders}></FontAwesomeIcon></button>
           <Input onChange={e => handleNomeAprocurar(e)} value={nomeAprocurar} className='input' size='large' placeholder="Busque por alguma tarefa"></Input>
           <button className='procurar' onClick={procurarNome}><SearchOutlined></SearchOutlined></button>
         </Space>

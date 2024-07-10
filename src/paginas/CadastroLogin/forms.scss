@@ -6,10 +6,10 @@
     @include mixnins.flex-center;
     align-items: center;
     margin: 20px 0 0 0;
-    height: 100vh;
+    height: 91vh;
     @include breakpoint.breakpoint(computador, max){
         margin: 20px 0;
-        height: 100vh;
+        height: 92vh;
     }
     .conteudo {
         width: fit-content;
@@ -27,6 +27,7 @@
             @include breakpoint.breakpoint(computador, max){
                 left: 11%;
                 height:600px;
+                width: 500px;
             }
             height:800px;
             width: 625px;
@@ -58,7 +59,7 @@
         .slider{
         transform: translateX(92%);
         @include breakpoint.breakpoint(computador, max){
-            transform: translateX(92%);
+            transform: translateX(100%);
         }
         }
     }
