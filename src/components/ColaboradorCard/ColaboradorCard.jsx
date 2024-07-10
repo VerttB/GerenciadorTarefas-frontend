@@ -7,6 +7,7 @@ function ColaboradorCard({color, secundaryColor, github, nome, titulo, tecnologi
     const corFundo = {
         background: `linear-gradient(to bottom, ${color}, ${secundaryColor} `
     }
+
     return(
         <div className="colaborador-card">
             <div className="card-header" style={corFundo}>
@@ -16,7 +17,7 @@ function ColaboradorCard({color, secundaryColor, github, nome, titulo, tecnologi
                 <div className='conteudo-texto'>
                     <h4>{nome}</h4>
                     <h5>{titulo}</h5>
-                    <p>{tecnologia}</p>
+                    <p className={nome}>{tecnologia}</p>
                 </div>
                 <div className="icones">
                     <a href={linkedin} target='_blank' ><LinkedinFilled className='icone'></LinkedinFilled></a>

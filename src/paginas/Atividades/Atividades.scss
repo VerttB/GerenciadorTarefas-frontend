@@ -3,37 +3,39 @@
 @use 'src/assets/styles/breakpoint.scss';
 
 .atividades-page {
-    @include mixnins.setHW(100vh, 100%);
+    @include mixnins.setHW(93vh, 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include breakpoint.breakpoint(celular,max){
+        @include mixnins.setHW(90vh, 100%);
 
+    }
     @include breakpoint.breakpoint(computador, max) {
         gap: 10px;
-        @include mixnins.setHW(100vh, 100%);
+        @include mixnins.setHW(93vh, 100%);
     }
 
     .taskItems {
-        padding: 10px;
         display: grid;
-        grid-template-columns: repeat(4, 25%);
+        grid-template-columns: repeat(4, 20%);
         gap: 10px;
-        border: 1px solid black;
-        @include mixnins.setHW(80%, 60%);
-        align-content: start;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        @include mixnins.bg-bd-mg-pd-bdR(transparent, none, $pd: 10px);
-        -webkit-box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.75);
+        justify-content: center;
+        @include mixnins.setHW(80%, 80%);
+        @include mixnins.bg-bd-mg-pd-bdR(transparent, none);
         margin-top: 30px;
-
-        @include breakpoint.breakpoint(computador, max) {
-            gap: 10px;
-            @include mixnins.setHW(80%, 90%);
+        overflow-y: scroll;
+        
+        @include breakpoint.breakpoint(wide, max){
+            @include mixnins.setHW(80%, 100%);
         }
 
+        @include breakpoint.breakpoint(computador, max) {
+            gap: 20px;
+            row-gap: 30px;
+            @include mixnins.setHW(80%, 100%);
+        }
+       
         @include breakpoint.breakpoint(tablet, max) {
             grid-template-columns: repeat(2, 25%);
             @include mixnins.setHW(80%, 80%);
@@ -41,16 +43,19 @@
         }
 
         @include breakpoint.breakpoint(celular, max) {
-            grid-template-columns: repeat(1, 50%);
-            @include mixnins.setHW(80%, 70%);
+            grid-template-columns: repeat(1, 80%);
+            @include mixnins.setHW(70%, 100%);
             padding-left: 25px;
             align-items: center;
-            gap: 20px;
+            gap: 50px;
         }
 
-        @include breakpoint.breakpoint(wide, max){
-            @include mixnins.setHW(80%, 90%);
-        }
+      
+
+       
+
+       
+        
     }
 
     .page-functions {

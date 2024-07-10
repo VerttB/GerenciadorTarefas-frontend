@@ -1,7 +1,7 @@
 @use 'src/assets/styles/mixnins.scss';
 @use 'src/assets/styles/breakpoint.scss';
 
-.task-botoes{
+div{
     .editar{
         @include mixnins.bg-bd-mg-pd-bdR(transparent, none,auto,auto);
         @include mixnins.ff-fs-fw($fs: 16px);

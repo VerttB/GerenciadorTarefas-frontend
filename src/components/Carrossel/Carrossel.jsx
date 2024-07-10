@@ -15,9 +15,6 @@ function Carrossel({imagem1, imagem2, imagem3, imagem4}) {
       <div>
         <h3 ><img className='imagem' src={imagem3}></img></h3>
       </div>
-      <div>
-        <h3 >4</h3>
-      </div>
     </Carousel>
     
     )

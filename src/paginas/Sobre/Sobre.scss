@@ -5,6 +5,9 @@
     height: 93vh;
     @include mixnins.flex-center();
     background-color: #faf4dc;
+    @include breakpoint.breakpoint(celular,max){
+        @include mixnins.setHW(90vh)
+    }
 
     .cards-conteiner{
         display: grid;
@@ -15,6 +18,8 @@
         @include breakpoint.breakpoint(celular, max){
             grid-template-columns: 1fr;
             gap: 12px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
         }
     }
 }

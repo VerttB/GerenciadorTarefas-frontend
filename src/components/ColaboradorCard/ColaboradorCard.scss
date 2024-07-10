@@ -54,11 +54,16 @@
                 font-weight: 700;
 
             }
+
         }
 
         .icones {
             margin-top: 24px;
             @include mixnins.flex-center(24px);
+
+            @include breakpoint.breakpoint(celular, max){
+                margin-top: 0px;
+            }
 
             a {
                 text-decoration: none;
@@ -67,6 +72,9 @@
                 .icone {
                     font-size: 36px;
                     transition: 0.1s ease-in;
+                    @include breakpoint.breakpoint(celular,max){
+                        font-size: 16px;
+                    }
 
                     &:hover {
                         cursor: pointer;

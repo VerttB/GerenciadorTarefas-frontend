@@ -20,7 +20,7 @@ function EditCard({ task, updateTask, index, icone }) {
     setOpen(false); // Fechar o modal após salvar
   };
   return (
-    <div className="task-botoes">
+    <div>
       <button className='editar' onClick={handleOpen}>{icone}</button>
       <ModalForm
         modalTitulo={"Editar Atividade"}

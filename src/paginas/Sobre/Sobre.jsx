@@ -16,7 +16,7 @@ function Sobre() {
         .then(data => setColaboradores(data))
         .catch(error => console.error(error));
     }, []);
-  
+    
     return (
 
         <main className="sobre-main">

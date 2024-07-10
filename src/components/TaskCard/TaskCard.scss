@@ -10,14 +10,16 @@
         &:hover{
             transform:scale(1.007)
         }
+        
+        @include breakpoint.breakpoint(wide, max){
+            @include mixnins.setHW(200px,100%);
+        }
 
         @include breakpoint.breakpoint(computador, max){
-            @include mixnins.setHW(140px, 200px);
+            @include mixnins.setHW(140px, 100%);
         }
        
-        @include breakpoint.breakpoint(wide, max){
-            @include mixnins.setHW(160px, 300px);
-        }
+        
 
         
 
@@ -30,9 +32,17 @@
             background-color: aqua;
             h4{
                 display: inline-block;
+                width: 50%;
+                
             }
             .funcoes{
+                padding-left: 50px;
                 display: flex;
+                width: 50%;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 10px;
+                
             }
             
         }
@@ -42,7 +52,15 @@
             gap: 12px;
             @include mixnins.bg-bd-mg-pd-bdR($bg:#EEEEEE,$bd: transparent, $pd:20px, $bdR: 0 0 10px 10px);
             @include mixnins.ff-fs-fw($fs:14px, $fw: 500);
-
+            p{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            .olho{
+                width: 5%;
+                display: inline-flex;
+            }
+        }
             .card-status{
                 @include mixnins.flex-center($gap: 10px,$just: none);
 

@@ -1,4 +1,6 @@
 import InputPerfil from "src/components/InputPerfil/InputPerfil";
+import InputSenhaPerfil from "src/components/InputPerfil/InputSenhaPerfil";
+
 import ButtonPerfil from "src/components/ButtonPerfil/ButtonPerfil";
 import { Space } from "antd";
 import { UserOutlined, MailOutlined } from '@ant-design/icons';
@@ -21,6 +23,7 @@ function Perfil({ user, setUser }) {
 
     const modificarPerfil = () => {
         const userNovo = {userId: user.userId ,nome: nome, senha: senha, email: email };
+        setUser(userNovo);
         fetch(`http://localhost:8080/GerenciadorTarefas/${user.userId}/editar_conta`, {
             method: 'PUT',
             headers: {
@@ -30,10 +33,7 @@ function Perfil({ user, setUser }) {
         })
         .then(response => response.json())
         .then(data => {
-            setNome(data.nome);
-            setSenha(data.senha);
-            setEmail(data.email);
-            setUser({nome, senha, email});
+            console.log(data)
         })
         .catch(err => console.error(err));
     }
@@ -62,9 +62,10 @@ function Perfil({ user, setUser }) {
 
             
             <Space className="perfil-dados" size={"large"} align="center" direction="vertical">
+                
                 <InputPerfil change={e => setNome(e.target.value)} prefix={UserOutlined} valor={nome} texto={"Nome do Perfil"} />
                 <InputPerfil change={e => setEmail(e.target.value)} prefix={MailOutlined} valor={email} texto={"Email do Perfil"} />
-                <InputPerfil change={e => setSenha(e.target.value)} prefix={MailOutlined} valor={senha} texto={"Senha do Perfil"} />
+                <InputSenhaPerfil change={e => setSenha(e.target.value)} prefix={MailOutlined} valor={senha} texto={"Senha do Perfil"} />
                 <Space size={"large"} align="center" direction="horizontal">
                     <ButtonPerfil funcao={modificarPerfil} valor={"Modificar"} tipo={"primary"} />
                     <ButtonPerfil funcao={deletarPerfil} valor={'Deletar Perfil'} tipo={"dashed"} />

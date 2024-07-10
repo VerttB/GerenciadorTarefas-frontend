@@ -91,6 +91,7 @@ function ModalForm({modalTitulo, open, setOpen, primaryAction, secondaryAction, 
 
   return (
     <Modal
+      
       okText={primaryAction}
       cancelText={secondaryAction}
       title={modalTitulo}

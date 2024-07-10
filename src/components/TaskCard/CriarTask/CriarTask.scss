@@ -4,7 +4,7 @@
 
 .task-botoes{
     width: 100%;
-    display: flex;
+    display: inline;
     align-items: center;
     justify-content: center;
     .adicionar{
@@ -16,19 +16,19 @@
         cursor: pointer;
         border: transparent;
         transition: 0.2s ease-in-out;
-        border-top-right-radius: 25%;
-        border-bottom-left-radius: 25%;
+       
         
-        @include mixnins.setHW($w: 400px);
+        
+        @include mixnins.setHW($w: 100%);
         @include breakpoint.breakpoint(computador, max){
-            @include mixnins.setHW(150px,240px );
+            @include mixnins.setHW(150px,100%);
 
         }
         @include breakpoint.breakpoint(celular, max){
             @include mixnins.setHW(150px, 100%)
     }
     @include breakpoint.breakpoint(wide, max){
-        @include mixnins.setHW(160px, 250px)
+        @include mixnins.setHW(160px, 100%)
 }
 
 

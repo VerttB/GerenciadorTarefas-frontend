@@ -1,4 +1,5 @@
 @use './functions.scss';
+@import url('./reset.scss');
 
 @mixin ff-fs-fw($ff: Arial, $fs: 12px, $fw:600){
     font-family: $ff;
